@@ -1,0 +1,12 @@
+
+<ul>
+<% @cryptos.each do |crypto| %>
+
+<li class="d-flex align-items-center">
+  <%= crypto.name %>
+  <%= crypto.symbol %>
+  <%= crypto.price %>
+</li>
+
+<% end %>
+</ul>
