@@ -1,11 +1,34 @@
-<ul>
-<% @cryptos.each do |crypto| %>
-
-<li class="d-flex align-items-center">
-  <%= link_to crypto.name, crypto_path(crypto) %>
-  <%= crypto.symbol %>
-  <%= crypto.price %>
-</li>
-
-<% end %>
-</ul>
+<div class="d-flex justify-content-center w-90 align-items-center">
+<table>
+  <tr>
+    <th> </th>
+    <th> </th>
+    <th> # </th>
+    <th> Crypto </th>
+    <th> Symbol </th>
+    <th> Price </th>
+    <th> Volume 24h </th>
+    <th> 1h </th>
+    <th> 24h </th>
+    <th> 7d </th>
+    <th> 30d </th>
+    <th> Mkt. Dominance </th>
+  </tr>
+    <% @cryptos.each do |crypto| %>
+  <tr>
+  <td> &#8599; </td>
+  <td> &#8601; </td>
+  <td> 1 </td>
+  <td> <%= link_to crypto.name, crypto_path(crypto) %> </td>
+  <td> <%= crypto.symbol %> </td>
+  <td> <%= crypto.price.round(3) %> </td>
+  <td> <%= crypto.volume_24h.round(2) %> </td>
+  <td> <%= crypto.percent_change_1h.round(2) %> </td>
+  <td> <%= crypto.percent_change_24h.round(2) %> </td>
+  <td> <%= crypto.percent_change_7d.round(2) %> </td>
+  <td> <%= crypto.percent_change_30d.round(2) %> </td>
+  <td> <%= crypto.market_cap %> </td>
+  </tr>
+    <% end %>
+</table>
+</div>
