@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_29_204219) do
+ActiveRecord::Schema.define(version: 2021_11_30_132837) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,9 +53,9 @@ ActiveRecord::Schema.define(version: 2021_11_29_204219) do
     t.string "name"
     t.string "symbol"
     t.integer "vote"
-    t.integer "max_supply"
-    t.integer "circulating_supply"
-    t.integer "total_supply"
+    t.float "max_supply"
+    t.float "circulating_supply"
+    t.float "total_supply"
     t.float "price"
     t.float "volume_24h"
     t.float "volume_change_24h"

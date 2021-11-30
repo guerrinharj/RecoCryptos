@@ -5,3 +5,36 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+require 'json'
+require 'open-uri'
+
+Crypto.destroy_all
+
+puts "Seeding..."
+url = "https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?CMC_PRO_API_KEY=6acf007d-9e84-482f-9df1-9245cfd223ed"
+url_serialized = URI.open(url).read
+cryptos_obj = JSON.parse(url_serialized)
+cryptos = cryptos_obj['data']
+
+cryptos.each do |crypto|
+  Crypto.create!(
+    name: crypto['name'],
+    symbol: crypto['symbol'],
+    max_supply: crypto['max_supply'],
+    circulating_supply: crypto['circulating_supply'],
+    total_supply: crypto['total_supply'],
+    market_cap: crypto['quote']['USD']['market_cap'],
+    market_cap_dominance: crypto['quote']['USD']['market_cap_dominance'],
+    price: crypto['quote']['USD']['price'],
+    volume_24h: crypto['quote']['USD']['volume_24h'],
+    volume_change_24h: crypto['quote']['USD']['volume_change_24h'],
+    percent_change_1h: crypto['quote']['USD']['percent_change_1h'],
+    percent_change_24h: crypto['quote']['USD']['percent_change_24h'],
+    percent_change_7d: crypto['quote']['USD']['percent_change_7d'],
+    percent_change_30d: crypto['quote']['USD']['percent_change_30d'],
+    vote: 0
+  )
+end
+
+puts "End seeding...."
