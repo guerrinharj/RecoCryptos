@@ -3,4 +3,8 @@ class PagesController < ApplicationController
 
   def home
   end
+
+  def wallet
+    @user = current_user
+  end
 end
