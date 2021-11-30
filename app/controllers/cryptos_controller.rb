@@ -32,4 +32,9 @@ class CryptosController < ApplicationController
     end
   end
   end
+
+  def show
+    @crypto = Crypto.find(params[:id])
+    authorize @crypto
+  end
 end
