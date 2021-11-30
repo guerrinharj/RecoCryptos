@@ -1,1 +1,12 @@
-<h1> this is the index </h1>
+
+<ul>
+<% @cryptos.each do |crypto| %>
+
+<li class="d-flex align-items-center">
+  <%= crypto.name %>
+  <%= crypto.symbol %>
+  <%= crypto.price %>
+</li>
+
+<% end %>
+</ul>

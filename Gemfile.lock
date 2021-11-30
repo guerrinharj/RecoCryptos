@@ -81,6 +81,8 @@ GEM
       aws_cf_signer
       rest-client
     coderay (1.1.3)
+    coinmarketcap (0.1.2)
+      httparty
     concurrent-ruby (1.1.9)
     crass (1.0.6)
     devise (4.8.0)
@@ -105,6 +107,9 @@ GEM
     http-accept (1.7.0)
     http-cookie (1.0.4)
       domain_name (~> 0.5)
+    httparty (0.20.0)
+      mime-types (~> 3.0)
+      multi_xml (>= 0.5.2)
     i18n (1.8.11)
       concurrent-ruby (~> 1.0)
     jbuilder (2.11.3)
@@ -126,6 +131,7 @@ GEM
     mini_mime (1.1.2)
     minitest (5.14.4)
     msgpack (1.4.2)
+    multi_xml (0.6.0)
     netrc (0.11.0)
     nio4r (2.5.8)
     nokogiri (1.12.5-x86_64-darwin)
@@ -266,6 +272,7 @@ DEPENDENCIES
   byebug
   capybara (>= 2.15)
   cloudinary (~> 1.16.0)
+  coinmarketcap (~> 0.1.2)
   devise
   dotenv-rails
   font-awesome-sass
