@@ -16,7 +16,7 @@
   </tr>
     <% @cryptos.each do |crypto| %>
   <tr>
-  <td> &#8599; </td>
+  <td> <%= link_to "+", crypto_path(crypto), method: :patch %> </td>
   <td> &#8601; </td>
   <td> <%= crypto.vote %> </td> </td>
   <td> <%= link_to crypto.name, crypto_path(crypto) %> </td>

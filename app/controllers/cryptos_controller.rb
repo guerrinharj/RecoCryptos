@@ -1,6 +1,7 @@
 class CryptosController < ApplicationController
   def index
   skip_policy_scope
+
   require 'json'
   require 'open-uri'
 
@@ -31,6 +32,15 @@ class CryptosController < ApplicationController
       end
     end
   end
+  end
+
+  def update
+    @crypto = Crypto.find(params[:id])
+    authorize @crypto
+    @crypto.vote += 1
+    if @crypto.save
+      redirect_to cryptos_path
+    end
   end
 
   def show
