@@ -32,9 +32,10 @@ class CryptosController < ApplicationController
 
   def index
     skip_policy_scope
-    @cryptos = Crypto.all.order('vote DESC')
     if params[:sort_param]
-      @cryptos.order("#{params[:sort_param]} DESC")
+      @cryptos = Crypto.all.order("#{params[:sort_param]} DESC")
+    else
+      @cryptos = Crypto.all.order('vote DESC')
     end
     api_get(@cryptos)
   end
