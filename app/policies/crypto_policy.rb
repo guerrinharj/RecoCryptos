@@ -9,7 +9,11 @@ class CryptoPolicy < ApplicationPolicy
     true
   end
 
-  def update?
+  def upvote?
+    true
+  end
+
+  def downvote?
     true
   end
 end

@@ -10,7 +10,7 @@ class CryptosController < ApplicationController
   cryptos_obj = JSON.parse(url_serialized)
   cryptos_api = cryptos_obj['data']
 
-  @cryptos = Crypto.all.order("price DESC")
+  @cryptos = Crypto.all.order("vote DESC")
 
   @cryptos.each do |crypto|
     cryptos_api.each do |crypto_api|
@@ -34,10 +34,19 @@ class CryptosController < ApplicationController
   end
   end
 
-  def update
+  def upvote
     @crypto = Crypto.find(params[:id])
     authorize @crypto
     @crypto.vote += 1
+    if @crypto.save
+      redirect_to cryptos_path
+    end
+  end
+
+  def downvote
+    @crypto = Crypto.find(params[:id])
+    authorize @crypto
+    @crypto.vote -= 1
     if @crypto.save
       redirect_to cryptos_path
     end
