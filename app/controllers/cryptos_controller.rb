@@ -1,5 +1,4 @@
 class CryptosController < ApplicationController
-
   def api_get(cryptos)
     require 'json'
     require 'open-uri'
@@ -37,6 +36,7 @@ class CryptosController < ApplicationController
     if params[:sort_param]
       @cryptos.order("#{params[:sort_param]} DESC")
     end
+    api_get(@cryptos)
   end
 
   def update
