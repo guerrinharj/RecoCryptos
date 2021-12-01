@@ -41,9 +41,9 @@ class CryptosController < ApplicationController
     api_get(@cryptos)
 
     if params[:query].present?
-      @cryptos = Crypto.where(name: params[:query])
+      @cryptos = Crypto.search_by_name(params[:query])
     else
-      @cryptos - Crypto.all
+      @cryptos = Crypto.all
     end
   end
 
