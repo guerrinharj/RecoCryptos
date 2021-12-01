@@ -1,23 +1,40 @@
+<div class="d-flex w-80 justify-content-center align-items-center">
+
+
+<%= form_tag cryptos_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find a crypto"
+  %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+<% end %>
+
+<%= link_to "Show All", cryptos_path, class: "btn btn-success" %>
+
+</div>
+
 <div class="d-flex justify-content-center w-90 align-items-center">
+
 <table>
   <tr>
     <th> </th>
     <th> </th>
-    <th> # </th>
-    <th> Crypto </th>
-    <th> Symbol </th>
-    <th> Price </th>
-    <th> Volume 24h </th>
-    <th> 1h </th>
-    <th> 24h </th>
-    <th> 7d </th>
-    <th> 30d </th>
-    <th> Mkt. Dominance </th>
+    <th> <%= link_to '#', cryptos_path(:sort_param => "vote") %> </th>
+    <th> <%= link_to 'Crypto', cryptos_path(:sort_param => "name") %> </th>
+    <th> <%= link_to 'Symbol', cryptos_path(:sort_param => "symbol") %> </th>
+    <th> <%= link_to 'Price', cryptos_path(:sort_param => "price") %>  </th>
+    <th> <%= link_to 'Volume 24h', cryptos_path(:sort_param => "volume_24h") %> </th>
+    <th> <%= link_to '1h', cryptos_path(:sort_param => "percent_change_1h") %> </th>
+    <th> <%= link_to '1d', cryptos_path(:sort_param => "percent_change_24h") %> </th>
+    <th> <%= link_to '7d', cryptos_path(:sort_param => "percent_change_7d") %> </th>
+    <th> <%= link_to '30d', cryptos_path(:sort_param => "percent_change_30d") %> </th>
+    <th> <%= link_to 'Mkt. Dominance', cryptos_path(:sort_param => "market_cap") %> </th>
   </tr>
     <% @cryptos.each do |crypto| %>
   <tr>
-  <td> &#8599; </td>
-  <td> &#8601; </td>
+  <td> <%= link_to "+", crypto_path(crypto, :signal_param => "plus"), method: :patch %> </td>
+  <td> <%= link_to "-", crypto_path(crypto, :signal_param => "minus"), method: :patch %> </td>
   <td> <%= crypto.vote %> </td> </td>
   <td> <%= link_to crypto.name, crypto_path(crypto) %> </td>
   <td> <%= crypto.symbol %> </td>
