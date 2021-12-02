@@ -8,8 +8,14 @@ class User < ApplicationRecord
   has_many :likes
   has_one_attached :photo
   validates :username, presence: true
+  validate :non_zero
 
   def set_defaults
     self.portfolio ||= 0
+    self.recos ||= 0
+  end
+
+  def non_zero
+    self.recos = 0 if self.recos.negative?
   end
 end
