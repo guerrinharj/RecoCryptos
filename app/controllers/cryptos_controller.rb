@@ -47,26 +47,18 @@ class CryptosController < ApplicationController
     else
       @cryptos = Crypto.all.order('vote DESC')
     end
-
-  end
-
-  def update
-    @crypto = Crypto.find(params[:id])
-    authorize @crypto
-
-    if params[:signal_param] == "plus"
-      @crypto.vote += 1
-    else
-      @crypto.vote -= 1
-    end
-
-    if @crypto.save
-      redirect_to cryptos_path
-    end
   end
 
   def show
     @crypto = Crypto.find(params[:id])
     authorize @crypto
+
+    @found_like = Like.where(crypto_id: @crypto.id, user_id: current_user)
+    @like = Like.new
+
+    @comments = Comment.where(crypto_id: @crypto)
+    @comment = Comment.new
+
+    @reco = Reco.new
   end
 end
