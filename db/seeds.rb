@@ -12,7 +12,7 @@ require 'open-uri'
 Crypto.destroy_all
 
 puts "Seeding..."
-url = "https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?CMC_PRO_API_KEY=6acf007d-9e84-482f-9df1-9245cfd223ed"
+url = "https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?CMC_PRO_API_KEY=#{ENV['COINMARKETCAP_API_KEY']}"
 url_serialized = URI.open(url).read
 cryptos_obj = JSON.parse(url_serialized)
 cryptos = cryptos_obj['data']
