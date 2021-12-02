@@ -18,8 +18,6 @@
 
 <table>
   <tr>
-    <th> </th>
-    <th> </th>
     <th> <%= link_to '#', cryptos_path(:sort_param => "vote") %> </th>
     <th> <%= link_to 'Crypto', cryptos_path(:sort_param => "name") %> </th>
     <th> <%= link_to 'Symbol', cryptos_path(:sort_param => "symbol") %> </th>
@@ -33,9 +31,7 @@
   </tr>
     <% @cryptos.each do |crypto| %>
   <tr>
-  <td> <%= link_to "+", crypto_path(crypto, :signal_param => "plus"), method: :patch %> </td>
-  <td> <%= link_to "-", crypto_path(crypto, :signal_param => "minus"), method: :patch %> </td>
-  <td> <%= crypto.vote %> </td> </td>
+  <td>  <%= %> </td>
   <td> <%= link_to crypto.name, crypto_path(crypto) %> </td>
   <td> <%= crypto.symbol %> </td>
   <td> <%= crypto.price.round(3) %> </td>
