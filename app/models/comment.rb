@@ -4,6 +4,8 @@ class Comment < ApplicationRecord
   belongs_to :user
   belongs_to :crypto
 
+  has_many :recos
+
   validates :content, length: { minimum: 3 }, presence: true
 
   def set_defaults

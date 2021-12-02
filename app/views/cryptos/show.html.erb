@@ -2,13 +2,11 @@
 <h2> <%= @crypto.symbol %> </h2>
 
 
-<div>
+<div class="m-4">
   <% if @found_like.empty? %>
-
     <%= simple_form_for([@crypto, @like]) do |f| %>
       <%= f.submit class: "btn-primary text-light p-2 shadow-none" %>
     <% end %>
-
   <% else %>
   <% if @found_like && policy(@found_like).destroy? %>
   <%= link_to "You liked!",
@@ -20,18 +18,30 @@
 </div>
 
 
-<div>
+<div class="m-4">
 
 <ul>
  <% @comments.each do |comment|%>
- <li>
+ <li class="m-4">
   <p> <%= comment.content %> <%= comment.is_edited ? "(edited)" : "" %><p>
   <% if comment.user == current_user && policy(comment).destroy?  %>
     <%= link_to 'Delete', comment_path(comment), method: :delete%>
   <% end %>
-  <h4> by <%= comment.user.username %> </h4>
- </li>
+  <h4> by <%= link_to comment.user.username, user_path(comment.user) %> at <span> <%= comment.created_at %> </span> </h4>
 
+  <% if comment.recos.group_by(&:user).include?(current_user) %>
+    <% comment.recos.each do |reco| %>
+      <% if reco.user == current_user %>
+        <%= link_to 'You recoed!', reco_path(reco), class: "btn-success text-light p-2 shadow-none", method: :delete%>
+      <% end %>
+    <% end%>
+    <% else %>
+    <%= simple_form_for([@crypto, comment, @reco]) do |f| %>
+      <%= f.submit class: "btn-primary text-light p-2 shadow-none"  %>
+    <% end %>
+  <% end %>
+
+ </li>
  <% end %>
 </ul>
 

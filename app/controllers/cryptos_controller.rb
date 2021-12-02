@@ -58,5 +58,7 @@ class CryptosController < ApplicationController
 
     @comments = Comment.where(crypto_id: @crypto)
     @comment = Comment.new
+
+    @reco = Reco.new
   end
 end

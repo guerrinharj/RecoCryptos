@@ -5,8 +5,11 @@ Rails.application.routes.draw do
 
   resources :cryptos, only: [:index, :show, :update] do
     resources :likes, only: [:create]
-    resources :comments, only: [:create]
+    resources :comments, only: [:create] do
+      resources :recos, only: [:create]
+    end
   end
+  resources :recos, only: [:destroy]
   resources :comments, only: [:destroy]
   resources :likes, only: [:destroy]
   resources :users, only: [:index, :show]

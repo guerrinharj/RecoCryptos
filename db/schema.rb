@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_02_051010) do
+ActiveRecord::Schema.define(version: 2021_12_02_172212) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -78,6 +78,17 @@ ActiveRecord::Schema.define(version: 2021_12_02_051010) do
     t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
+  create_table "recos", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "crypto_id"
+    t.bigint "comment_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["comment_id"], name: "index_recos_on_comment_id"
+    t.index ["crypto_id"], name: "index_recos_on_crypto_id"
+    t.index ["user_id"], name: "index_recos_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -98,4 +109,7 @@ ActiveRecord::Schema.define(version: 2021_12_02_051010) do
   add_foreign_key "comments", "users"
   add_foreign_key "likes", "cryptos"
   add_foreign_key "likes", "users"
+  add_foreign_key "recos", "comments"
+  add_foreign_key "recos", "cryptos"
+  add_foreign_key "recos", "users"
 end
