@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   resources :cryptos, only: [:index, :show, :update] do
     resources :likes, only: [:create]
+    resources :comments
   end
   resources :likes, only: [:destroy]
   resources :users, only: [:index, :show]

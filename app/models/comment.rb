@@ -4,7 +4,7 @@ class Comment < ApplicationRecord
   belongs_to :user
   belongs_to :crypto
 
-  validates :content, presence: true
+  validates :content, length: { minimum: 10 }, presence: true
 
   def set_defaults
     self.is_edited ||= false

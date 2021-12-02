@@ -22,7 +22,7 @@
 
 <div>
  <%= simple_form_for([@crypto, @comment]) do |f| %>
-      <%= f.text :content %>
+      <%= f.text_field :content %>
       <%= f.submit class: "btn-primary text-light p-2 shadow-none" %>
     <% end %>
 </div>
