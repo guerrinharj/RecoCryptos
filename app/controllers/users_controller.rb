@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.all
+    @users = User.all.order('recos DESC')
     user_length = User.count
     @positions = (1..user_length)
   end
