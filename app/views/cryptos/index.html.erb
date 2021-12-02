@@ -18,29 +18,27 @@
 
 <table>
   <tr>
-    <th> <%= link_to '#', cryptos_path(:sort_param => "vote") %> </th>
-    <th> <%= link_to 'Crypto', cryptos_path(:sort_param => "name") %> </th>
-    <th> <%= link_to 'Symbol', cryptos_path(:sort_param => "symbol") %> </th>
-    <th> <%= link_to 'Price', cryptos_path(:sort_param => "price") %>  </th>
-    <th> <%= link_to 'Volume 24h', cryptos_path(:sort_param => "volume_24h") %> </th>
-    <th> <%= link_to '1h', cryptos_path(:sort_param => "percent_change_1h") %> </th>
-    <th> <%= link_to '1d', cryptos_path(:sort_param => "percent_change_24h") %> </th>
-    <th> <%= link_to '7d', cryptos_path(:sort_param => "percent_change_7d") %> </th>
-    <th> <%= link_to '30d', cryptos_path(:sort_param => "percent_change_30d") %> </th>
-    <th> <%= link_to 'Mkt. Dominance', cryptos_path(:sort_param => "market_cap") %> </th>
+    <th> <%= sortable 'symbol', "Symbol" %> </th>
+    <th> <%= sortable 'name', "Name" %> </th>
+    <th> <%= sortable 'price', "Price" %>  </th>
+    <th> <%= sortable 'volume_24h', "Volume_24h" %> </th>
+    <th> <%= sortable 'percent_change_1h', "1h" %></th>
+    <th> <%= sortable 'percent_change_24h', "1d" %> </th>
+    <th> <%= sortable 'percent_change_7d', "7d" %> </th>
+    <th> <%= sortable 'percent_change_30d', "30d" %> </th>
+    <th> <%= sortable 'market_cap', "Mkt. Cap" %> </th>
   </tr>
     <% @cryptos.each do |crypto| %>
   <tr>
-  <td>  <%= %> </td>
-  <td> <%= link_to crypto.name, crypto_path(crypto) %> </td>
-  <td> <%= crypto.symbol %> </td>
-  <td> <%= crypto.price.round(3) %> </td>
-  <td> <%= crypto.volume_24h.round(2) %> </td>
-  <td> <%= crypto.percent_change_1h.round(2) %> </td>
-  <td> <%= crypto.percent_change_24h.round(2) %> </td>
-  <td> <%= crypto.percent_change_7d.round(2) %> </td>
-  <td> <%= crypto.percent_change_30d.round(2) %> </td>
-  <td> <%= crypto.market_cap %> </td>
+    <td> <%= crypto.symbol %> </td>
+    <td> <%= link_to crypto.name, crypto_path(crypto) %> </td>
+    <td> <%= crypto.price.round(3) %> </td>
+    <td> <%= crypto.volume_24h.round(2) %> </td>
+    <td> <%= crypto.percent_change_1h.round(2) %> </td>
+    <td> <%= crypto.percent_change_24h.round(2) %> </td>
+    <td> <%= crypto.percent_change_7d.round(2) %> </td>
+    <td> <%= crypto.percent_change_30d.round(2) %> </td>
+    <td> <%= crypto.market_cap %> </td>
   </tr>
     <% end %>
 </table>

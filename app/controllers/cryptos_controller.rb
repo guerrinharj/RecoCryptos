@@ -1,4 +1,5 @@
 class CryptosController < ApplicationController
+
   def api_get(cryptos)
     require 'json'
     require 'open-uri'
@@ -35,17 +36,13 @@ class CryptosController < ApplicationController
 
     if params[:query].present?
       @cryptos = Crypto.search_by_name(params[:query])
+    elsif params[:sort].present?
+      @cryptos = Crypto.all.order(params[:sort] + " " + params[:direction])
     else
-      @cryptos = Crypto.all
+      @cryptos = Crypto.all.order("price DESC")
     end
 
     api_get(@cryptos)
-
-    if params[:sort_param]
-      @cryptos = Crypto.all.order("#{params[:sort_param]} DESC")
-    else
-      @cryptos = Crypto.all.order('vote DESC')
-    end
   end
 
   def show
