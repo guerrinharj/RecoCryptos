@@ -4,4 +4,7 @@ class UserPolicy < ApplicationPolicy
       scope.all
     end
   end
+  def wallet?
+    true
+  end
 end

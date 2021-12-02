@@ -9,4 +9,10 @@ class UsersController < ApplicationController
   @user = User.find(params[:id])
   authorize @user
   end
+
+  def wallet
+    @user = User.find(params[:id])
+    @wallet_inclusions = WalletInclusion.where(user: @user)
+    authorize @user
+  end
 end
