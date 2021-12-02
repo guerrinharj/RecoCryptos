@@ -32,15 +32,14 @@ class CryptosController < ApplicationController
 
   def index
     skip_policy_scope
-    @cryptos = Crypto.all
-
-    api_get(@cryptos)
 
     if params[:query].present?
       @cryptos = Crypto.search_by_name(params[:query])
     else
       @cryptos = Crypto.all
     end
+
+    api_get(@cryptos)
 
     if params[:sort_param]
       @cryptos = Crypto.all.order("#{params[:sort_param]} DESC")
