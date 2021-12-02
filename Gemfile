@@ -32,6 +32,7 @@ gem 'devise'
 gem 'cloudinary', '~> 1.16.0'
 gem 'pundit'
 gem 'coinmarketcap', '~> 0.1.2'
+gem 'pg_search', '~> 2.3.0'
 
 gem 'autoprefixer-rails', '10.2.5'
 gem 'font-awesome-sass'
