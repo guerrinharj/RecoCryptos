@@ -21,6 +21,20 @@
 
 
 <div>
+
+<ul>
+ <% @comments.each do |comment|%>
+ <li>
+  <p> <%= comment.content %> <%= comment.is_edited ? "(edited)" : "" %><p>
+  <% if comment.user == current_user %>
+    EDIT / DELETE
+  <% end %>
+  <h4> by <%= comment.user.username %> </h4>
+ </li>
+
+ <% end %>
+</ul>
+
  <%= simple_form_for([@crypto, @comment]) do |f| %>
       <%= f.text_field :content %>
       <%= f.submit class: "btn-primary text-light p-2 shadow-none" %>
