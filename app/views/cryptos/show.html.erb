@@ -26,8 +26,8 @@
  <% @comments.each do |comment|%>
  <li>
   <p> <%= comment.content %> <%= comment.is_edited ? "(edited)" : "" %><p>
-  <% if comment.user == current_user %>
-    EDIT / DELETE
+  <% if comment.user == current_user && policy(comment).destroy?  %>
+    <%= link_to 'Delete', comment_path(comment), method: :delete%>
   <% end %>
   <h4> by <%= comment.user.username %> </h4>
  </li>

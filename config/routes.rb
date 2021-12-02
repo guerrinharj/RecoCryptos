@@ -5,8 +5,9 @@ Rails.application.routes.draw do
 
   resources :cryptos, only: [:index, :show, :update] do
     resources :likes, only: [:create]
-    resources :comments
+    resources :comments, only: [:create]
   end
+  resources :comments, only: [:destroy]
   resources :likes, only: [:destroy]
   resources :users, only: [:index, :show]
   get '/ranking', to: "users#index", as: :ranking
