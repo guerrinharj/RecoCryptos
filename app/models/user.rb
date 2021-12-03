@@ -11,7 +11,6 @@ class User < ApplicationRecord
   validates :photo, presence: true
   validate :non_zero
 
-
   def set_defaults
     self.portfolio ||= 0
     self.recos ||= 0
