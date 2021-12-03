@@ -34,10 +34,10 @@
     <td> <%= link_to crypto.name, crypto_path(crypto) %> </td>
     <td> <%= crypto.price.round(3) %> </td>
     <td> <%= crypto.volume_24h.round(2) %> </td>
-    <td> <%= crypto.percent_change_1h.round(2) %> </td>
-    <td> <%= crypto.percent_change_24h.round(2) %> </td>
-    <td> <%= crypto.percent_change_7d.round(2) %> </td>
-    <td> <%= crypto.percent_change_30d.round(2) %> </td>
+    <td style='<%= crypto.percent_change_1h.negative? ? "color: red" : "color: green" %>'> <%= crypto.percent_change_1h.round(2) %> </td>
+    <td style='<%= crypto.percent_change_24h.negative? ? "color: red" : "color: green" %>'> <%= crypto.percent_change_24h.round(2) %> </td>
+    <td style='<%= crypto.percent_change_7d.negative? ? "color: red" : "color: green" %>'> <%= crypto.percent_change_7d.round(2) %> </td>
+    <td style='<%= crypto.percent_change_30d.negative? ? "color: red" : "color: green" %>'> <%= crypto.percent_change_30d.round(2) %> </td>
     <td> <%= crypto.market_cap %> </td>
   </tr>
     <% end %>
