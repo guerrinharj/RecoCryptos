@@ -29,18 +29,18 @@
     <th> % of Portfolio </th>
   </tr>
   <% @wallet_inclusions.each_with_index do |coin, index| %>
-  <tr>
+  <tr class="coinrow">
     <td> <%= index+1 %></td>
     <td> <%= coin.crypto.name %> </td>
     <td> <%= coin.crypto.symbol %> </td>
-    <td> <%= coin.amount %> </td>
-    <td> <%= coin.buying_price %> </td>
+    <td class="amount"> <%= coin.amount %> </td>
+    <td class="buying_price"> <%= coin.buying_price %> </td>
     <td>  date #todo</td>
-    <td>  <span id="cost"></span></td>
-    <td> <%= coin.crypto.price %> </td>
-    <td>  <span id="dif"></span></td>
-    <td> <span id="profit"></span> </td>
-    <td>  <span id="portfolio"></span></td>
+    <td>  <span class="cost"></span></td>
+    <td class="price"> <%= coin.crypto.price %> </td>
+    <td>  <span class="dif"></span></td>
+    <td> <span class="profit"></span> </td>
+    <td>  <span class="portfolio"></span></td>
   </tr>
   <% end %>
 </table>
