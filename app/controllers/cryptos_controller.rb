@@ -1,4 +1,5 @@
 class CryptosController < ApplicationController
+  skip_before_action :authenticate_user!, only: :index
 
   def api_get(cryptos)
     require 'json'
