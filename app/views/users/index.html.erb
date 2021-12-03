@@ -3,12 +3,13 @@
   <tr>
     <th> Pos. </th>
     <th> User </th>
-    <th> Votes </th>
+    <th> Recos </th>
   </tr>
   <% @users.each do |user| %>
   <tr>
-    <td> 1 </td>
+    <td>  <%= (@users.index(user) + 1) %> </td>
     <td> <%= cl_image_tag user.photo.key, width: 40, height: 30 %> <%= link_to user.username, user_path(user) %> </td>
+    <td> <%= user.recos %> </td>
   </tr>
   <% end %>
 </table>

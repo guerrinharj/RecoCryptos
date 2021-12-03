@@ -1,4 +1,6 @@
 class CryptosController < ApplicationController
+  skip_before_action :authenticate_user!, only: :index
+
   def api_get(cryptos)
     require 'json'
     require 'open-uri'
@@ -32,41 +34,28 @@ class CryptosController < ApplicationController
 
   def index
     skip_policy_scope
-    @cryptos = Crypto.all
-
-    api_get(@cryptos)
 
     if params[:query].present?
       @cryptos = Crypto.search_by_name(params[:query])
+    elsif params[:sort].present?
+      @cryptos = Crypto.all.order(params[:sort] + " " + params[:direction])
     else
-      @cryptos = Crypto.all
+      @cryptos = Crypto.all.order("price DESC")
     end
 
-    if params[:sort_param]
-      @cryptos = Crypto.all.order("#{params[:sort_param]} DESC")
-    else
-      @cryptos = Crypto.all.order('vote DESC')
-    end
-
-  end
-
-  def update
-    @crypto = Crypto.find(params[:id])
-    authorize @crypto
-
-    if params[:signal_param] == "plus"
-      @crypto.vote += 1
-    else
-      @crypto.vote -= 1
-    end
-
-    if @crypto.save
-      redirect_to cryptos_path
-    end
+    api_get(@cryptos)
   end
 
   def show
     @crypto = Crypto.find(params[:id])
     authorize @crypto
+
+    @found_like = Like.where(crypto_id: @crypto.id, user_id: current_user)
+    @like = Like.new
+
+    @comments = Comment.where(crypto_id: @crypto)
+    @comment = Comment.new
+
+    @reco = Reco.new
   end
 end
