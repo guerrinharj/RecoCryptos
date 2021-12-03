@@ -4,7 +4,7 @@ class Comment < ApplicationRecord
   belongs_to :user
   belongs_to :crypto
 
-  has_many :recos
+  has_many :recos, dependent: :destroy
 
   validates :content, length: { minimum: 3 }, presence: true
 
