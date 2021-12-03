@@ -8,7 +8,7 @@
   <% @users.each do |user| %>
   <tr>
     <td>  <%= (@users.index(user) + 1) %> </td>
-    <td> <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+    <td> <%= cl_image_tag user.photo.key, width: 40, height: 30 %> <%= link_to user.username, user_path(user) %> </td>
     <td> <%= user.recos %> </td>
   </tr>
   <% end %>
