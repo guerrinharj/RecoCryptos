@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_one_attached :photo, dependent: :destroy
   validates :username, presence: true
+  validates :photo, presence: true
   validate :non_zero
 
 
