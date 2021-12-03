@@ -1,11 +1,9 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background-color: rgb(20, 127, 251);
+  border: solid 1px #000;
   border-radius: 20px;
-  margin-top: 30px;
-  margin-bottom: 30px;
-  margin-left: 100px;
-  margin-right: 100px;
+  margin: 30px auto;
+  width: 77%
 }
 
 .navbar .navbar-expand-sm .navbar-light .navbar-lewagon {
@@ -24,6 +22,13 @@
 
 .nav-item {
 padding-left: 100px;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.nav-item:last-child {
+  padding-right: 50px
 }
 
 .dropdown-square {
@@ -36,6 +41,14 @@ padding-left: 100px;
 
 .dropdown-square:hover {
 cursor: pointer;
+}
+
+.dropdown-menu {
+  background-color: inherit;
+  border-radius: 20px;
+  top: 120%!important;
+  border: solid 1px black;
+  transition: 0.2s ease;
 }
 
 
@@ -59,7 +72,7 @@ display: inline-block;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgb(20, 127, 251);
+    background-color: inherit;
     border-radius: 10rem;
     z-index: -2;
   }
