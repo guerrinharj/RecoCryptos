@@ -1,23 +1,33 @@
-<div class="wrapper">
-  <div class="d-flex justify-content-between mx-7">
-    <div class="card-product">
-    <h2>RecoCryptos</h2>
-      </div>
+<div class="home-wrapper">
+  <div class="home-inner">
+    <div class="first-box">
+      <h1>RecoCryptos</h1>
+    </div>
+    <div class="second-box">
       <div class="card-description">
-        <h1><strong>What’s RecoCryptos?</strong></h1>
+      <span>
+        <h2>What’s RecoCryptos?</h2>
         <p>RecoCryptos is an app for inexperienced yet enthusiasts of
           the crypto world! With realtime interactions and tips between
           users from all kinds of backgrounds
         </p>
-        <h2><strong>Why should i use it?</strong></h2>
+      </span>
+      <span>
+        <h2>Why should i use it?</h2>
         <p>Investing in crypto can be too much sometimes, and the scene is crippled by people who aren’t interested in share their knowledge
           e value ourselves in creating a real community with a very
           straightforward approach.
         </p>
-        <h3><strong>What else?</strong></h3>
+      </span>
+      <span>
+        <h3>What else?</h2>
         <p>You also win a wallet simulator so you can calculate
           before doing transactions. All of this with always updateddata coming from all the main cryptocurrency across the globe.
         </p>
+      </span>
+      </div>
+      <div class="enter-outer">
+          <%= link_to "Enter!", new_user_session_path, class: "enter" %>
       </div>
     </div>
   </div>
