@@ -1,20 +1,23 @@
+
+<div>
 <h1> <%= @crypto.name %> </h1>
 <h2> <%= @crypto.symbol %> </h2>
 
-
-<div class="m-4">
-  <% if @found_like.empty? %>
-    <%= simple_form_for([@crypto, @like]) do |f| %>
-      <%= f.submit class: "btn-primary text-light p-2 shadow-none" %>
+  <div class="m-4">
+    <% if @found_like.empty? %>
+      <%= simple_form_for([@crypto, @like]) do |f| %>
+        <%= f.submit class: "btn-primary text-light p-2 shadow-none" %>
+      <% end %>
+    <% else %>
+    <% if @found_like && policy(@found_like).destroy? %>
+    <%= link_to "You liked!",
+        like_path(@found_like.first.id),
+        class: "btn-success text-light p-2 shadow-none",
+        method: :delete %>
     <% end %>
-  <% else %>
-  <% if @found_like && policy(@found_like).destroy? %>
-  <%= link_to "You liked!",
-      like_path(@found_like.first.id),
-      class: "btn-success text-light p-2 shadow-none",
-      method: :delete %>
-  <% end %>
-  <% end %>
+    <% end %>
+  </div>
+
 </div>
 
 <ul>
@@ -30,6 +33,10 @@
   <li> Market Cap: <%= @crypto.market_cap %> </li>
   <li> Market Cap Dominance: <%= @crypto.market_cap_dominance %> </li>
 </ul>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1935ce541012a11a8ec5f37913117847aaa74945
 
 <div class="m-4">
 
