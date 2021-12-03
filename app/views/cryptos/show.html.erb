@@ -20,6 +20,20 @@
 
 </div>
 
+<ul>
+  <li> Max Supply:  <%= @crypto.max_supply %> </li>
+  <li> Circulating Supply: <%= @crypto.circulating_supply %> </li>
+  <li> Total Supply: <%= @crypto.total_supply %> </li>
+  <li> Volume 24h: <%= @crypto.volume_24h %> </li>
+  <li> Volume Change 24h:  <%= @crypto.volume_change_24h %> </li>
+  <li> Percent Change 1h: <span style="<%=@crypto.percent_change_1h.negative? ? 'color: red' : 'color: green'%>"><%= @crypto.percent_change_1h %></span> </li>
+  <li> Percent Change 1d: <span style="<%=@crypto.percent_change_24h.negative? ? 'color: red' : 'color: green'%>"><%= @crypto.percent_change_24h %></span> </li>
+  <li> Percent Change 7d: <span style="<%=@crypto.percent_change_7d.negative? ? 'color: red' : 'color: green'%>"><%= @crypto.percent_change_7d %></span> </li>
+  <li> Percent Change 30d: <span style="<%=@crypto.percent_change_30d.negative? ? 'color: red' : 'color: green'%>"><%= @crypto.percent_change_30d %></span> </li>
+  <li> Market Cap: <%= @crypto.market_cap %> </li>
+  <li> Market Cap Dominance: <%= @crypto.market_cap_dominance %> </li>
+</ul>
+
 
 <div class="m-4">
 
