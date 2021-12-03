@@ -1,0 +1,35 @@
+.cryptos-wrapper {
+  width: 90%;
+  margin: auto;
+}
+
+.search-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0;
+  position: fixed;
+  width: 90%;
+  right: 0;
+}
+
+.search-wrapper input, .search-confirm, .show-all {
+  color: black;
+  background-color: inherit;
+  border: solid 1px black;
+  margin: 0 0 10px 0!important;
+  transition: 0.3s ease;
+}
+
+.form-control {
+  width: 85%!important;
+}
+
+.search-confirm:hover, .show-all:hover {
+  background-color: black;
+  color: white;
+  transition: 0.3s ease;
+}
+
+table a {
+  color: black!important
+}
