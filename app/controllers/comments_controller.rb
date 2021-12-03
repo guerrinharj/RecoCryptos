@@ -15,7 +15,9 @@ class CommentsController < ApplicationController
   def destroy
     @comment = Comment.find(params[:id])
     authorize @comment
+    @crypto = @comment.crypto
     @comment.destroy
+    redirect_to crypto_path(@crypto)
   end
 
   private
