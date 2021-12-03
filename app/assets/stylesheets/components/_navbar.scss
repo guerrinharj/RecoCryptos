@@ -1,6 +1,15 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background-color: rgb(20, 127, 251);
+  border-radius: 20px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+.navbar .navbar-expand-sm .navbar-light .navbar-lewagon {
+  justify-content: center;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -8,5 +17,68 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
+  width: 100px;
+  margin: 0px;
+  padding: 0px;
+}
+
+.nav-item {
+padding-left: 100px;
+}
+
+.dropdown-square {
+  margin-top: 13px;
+  margin-right: 20px;
+  justify-content: center;
+  width: 30px;
+  object-fit: contain;
+}
+
+.dropdown-square:hover {
+cursor: pointer;
+}
+
+
+.nav-link {
+margin-top: 7px;
+display: inline-block;
+  padding: .75rem 1.25rem;
+  border-radius: 10rem;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 1rem;
+  letter-spacing: .15rem;
+  transition: all .3s;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(20, 127, 251);
+    border-radius: 10rem;
+    z-index: -2;
+  }
+  &:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: darken( rgb(255, 255, 255), 15%);
+    transition: all .3s;
+    border-radius: 10rem;
+    z-index: -1;
+  }
+  &:hover {
+    color: #fff;
+    &:before {
+      width: 100%;
+    }
+  }
 }
