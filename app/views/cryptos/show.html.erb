@@ -44,7 +44,7 @@
     <%= link_to 'Edit', comment_path(comment), method: :patch%>
   <% end %>
   <% if comment.user == current_user && policy(comment).destroy?  %>
-    <%= link_to 'Delete', comment_path(comment), method: :delete%>
+    <%= link_to 'Delete', comment_path(comment), method: :delete, remote: true%>
   <% end %>
   <h4> by <%= link_to comment.user.username, user_path(comment.user) %> at <span> <%= comment.created_at %> </span> </h4>
 
