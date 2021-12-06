@@ -27,19 +27,19 @@
     <div class="crypto-info-box">
       <ul>
         <div>
-          <li> <h5>Max Supply:</h5>  $ <%= number_with_delimiter(@crypto.max_supply.round(2)) %> </li>
-          <li> <h5>Circulating Supply:</h5> $ <%= number_with_delimiter(@crypto.circulating_supply.round(2)) %> </li>
-          <li> <h5>Total Supply:</h5> $ <%= number_with_delimiter(@crypto.total_supply.round(2)) %> </li>
-          <li> <h5>Volume 24h:</h5> $ <%= number_with_delimiter(@crypto.volume_24h.round(2)) %> </li>
-          <li> <h5>Volume Change 24h:</h5>  $ <%= number_with_delimiter(@crypto.volume_change_24h.round(2)) %> </li>
+          <li> <h5>Max Supply:</h5>  $ <%= number_with_delimiter(@crypto.max_supply) %> </li>
+          <li> <h5>Circulating Supply:</h5> $ <%= number_with_delimiter(@crypto.circulating_supply) %> </li>
+          <li> <h5>Total Supply:</h5> $ <%= number_with_delimiter(@crypto.total_supply) %> </li>
+          <li> <h5>Volume 24h:</h5> $ <%= number_with_delimiter(@crypto.volume_24h) %> </li>
+          <li> <h5>Volume Change 24h:</h5>  $ <%= number_with_delimiter(@crypto.volume_change_24h) %> </li>
         </div>
         <div>
           <li> <h5>Percent Change 1h:</h5>  <span style="<%=@crypto.percent_change_1h.negative? ? 'color: red' : 'color: green'%>"><%= number_with_delimiter(@crypto.percent_change_1h.round(2)) %>%</span> </li>
           <li> <h5>Percent Change 1d:</h5>  <span style="<%=@crypto.percent_change_24h.negative? ? 'color: red' : 'color: green'%>"><%= @crypto.percent_change_24h.round(2) %>%</span> </li>
           <li> <h5>Percent Change 7d:</h5>  <span style="<%=@crypto.percent_change_7d.negative? ? 'color: red' : 'color: green'%>"><%= @crypto.percent_change_7d.round(2) %>%</span> </li>
           <li> <h5>Percent Change 30d:</h5>  <span style="<%=@crypto.percent_change_30d.negative? ? 'color: red' : 'color: green'%>"><%= @crypto.percent_change_30d.round(2) %>%</span> </li>
-          <li> <h5>Market Cap:</h5>  $ <%= number_with_delimiter(@crypto.market_cap.round(2)) %> </li>
-          <li> <h5>Market Cap Dominance:</h5>  $ <%= number_with_delimiter(@crypto.market_cap_dominance.round(2)) %> </li>
+          <li> <h5>Market Cap:</h5>  $ <%= number_with_delimiter(@crypto.market_cap) %> </li>
+          <li> <h5>Market Cap Dominance:</h5>  $ <%= number_with_delimiter(@crypto.market_cap_dominance) %> </li>
         </div>
       </ul>
     </div>
