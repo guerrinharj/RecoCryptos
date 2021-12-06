@@ -1,4 +1,4 @@
-
+<%= render 'shared/navbar' %>
 <div>
 <h1> <%= @crypto.name %> </h1>
 <h2> <%= @crypto.symbol %> </h2>
@@ -39,9 +39,9 @@
 <ul>
  <% @comments.each do |comment|%>
  <li class="m-4">
-  <p> <%= comment.content %> <%= comment.is_edited ? "(edited)" : "" %><p>
+  <p id="<%= comment.id %>">  <%= comment.content %> <%= comment.is_edited ? "(edited)" : "" %><p>
   <% if comment.user == current_user && policy(comment).destroy?  %>
-    <%= link_to 'Delete', comment_path(comment), method: :delete%>
+    <%= link_to 'Delete', comment_path(comment), method: :delete, remote: true%>
   <% end %>
   <h4> by <%= link_to comment.user.username, user_path(comment.user) %> at <span> <%= comment.created_at %> </span> </h4>
 
@@ -61,7 +61,7 @@
  <% end %>
 </ul>
 
- <%= simple_form_for([@crypto, @comment]) do |f| %>
+ <%= simple_form_for([@crypto, @comment], remote: true) do |f| %>
       <%= f.text_field :content %>
       <%= f.submit class: "btn-primary text-light p-2 shadow-none" %>
     <% end %>

@@ -6,7 +6,7 @@ class CommentsController < ApplicationController
     @comment.crypto_id = @crypto.id
     authorize @comment
     if @comment.save
-      redirect_to crypto_path(@crypto)
+      redirect_to crypto_path(@crypto, anchor: "#{@comment.id}")
     else
       flash[:notice]
     end
@@ -15,7 +15,9 @@ class CommentsController < ApplicationController
   def destroy
     @comment = Comment.find(params[:id])
     authorize @comment
+    @crypto = @comment.crypto
     @comment.destroy
+    redirect_to crypto_path(@crypto)
   end
 
   private
