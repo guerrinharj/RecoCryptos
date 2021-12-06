@@ -46,10 +46,10 @@ cursor: pointer;
 
 .dropdown-menu {
   background-color: inherit;
-  border-radius: 20px;
   top: 120%!important;
   border: solid 1px black;
   transition: 0.2s ease;
+  background-color: lightblue;
 }
 
 
@@ -95,4 +95,30 @@ display: inline-block;
       width: 100%;
     }
   }
+}
+
+@media (max-width: 600px) {
+
+  .navbar-lewagon {
+    width: 95%;
+    margin: 10px auto;
+  }
+
+  .navbar-light .navbar-toggler {
+    border: none;
+  }
+
+  .nav-item {
+    padding-left: 0px
+  }
+
+  .nav-item:last-child {
+    margin: 20px 0;
+    padding-right: 0;
+}
+
+  .dropdown-menu {
+    border: none;
+  }
+
 }

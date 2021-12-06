@@ -9,7 +9,7 @@
   margin: 0;
   position: fixed;
   width: auto;
-  right: 0;
+  right: 0px;
 }
 
 .search-wrapper input, .search-confirm, .show-all {
@@ -30,6 +30,44 @@
   transition: 0.3s ease;
 }
 
+.cryptos-inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cryptos-inner table th, .cryptos-inner table td {
+  padding: 0px 30px 15px 0px!important;
+}
+
 table a {
   color: black!important
+}
+
+
+
+@media (max-width: 600px) {
+
+  .cryptos-inner table th, .cryptos-inner table td {
+  padding: 0px 30px 30px 0px!important;
+}
+
+
+.symbol_column, .volume_24h_column, .percent_change_7d_column, .percent_change_30d_column, .market_cap_column {
+  display: none;
+}
+
+.percent_change_1h_column, .percent_change_1d_column {
+  font-size: 12px
+}
+
+.cryptos-inner {
+  display: block;
+  margin: 0 20px;
+}
+
+.search-wrapper {
+  display: none;
+}
+
 }

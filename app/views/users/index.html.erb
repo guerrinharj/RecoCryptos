@@ -1,15 +1,34 @@
 <%= render 'shared/navbar' %>
-<table>
-  <tr>
-    <th> Pos. </th>
-    <th> User </th>
-    <th> Recos </th>
-  </tr>
-  <% @users.each do |user| %>
-  <tr>
-    <td>  <%= (@users.index(user) + 1) %> </td>
-    <td> <%= cl_image_tag user.photo.key, width: 40, height: 30 %> <%= link_to user.username, user_path(user) %> </td>
-    <td> <%= user.recos %> </td>
-  </tr>
-  <% end %>
-</table>
+
+<div class="users-wrapper">
+
+<div class="ranking-title text-center">
+  RECO RANKING!
+  </div>
+
+  <div class="users-inner">
+
+  <table>
+    <tr>
+      <th class="position-column"> # </th>
+      <th class="user-column"> User </th>
+      <th class="reco-column"> Recos </th>
+    </tr>
+    <% @users.each do |user| %>
+    <tr>
+      <td class="position-column">
+        <%= (@users.index(user) + 1) %>
+      </td>
+      <td class="user-column">
+        <%= link_to user.username, user_path(user) %>
+      </td>
+      <td class="reco-column">
+        <%= user.recos %>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+
+  </div>
+
+</div>
