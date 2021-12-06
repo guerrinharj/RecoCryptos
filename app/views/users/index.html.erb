@@ -20,14 +20,7 @@
         <%= (@users.index(user) + 1) %>
       </td>
       <td class="user-column">
-        <%= link_to user_path(user) do %>
-        <div>
-          <%= cl_image_tag user.photo.key, width: 200, height: 200, class: "avatar" %>
-        </div>
-        <div>
-          <%= user.username %>
-        </div>
-        <% end%>
+        <%= link_to user.username, user_path(user) %>
       </td>
       <td class="reco-column">
         <%= user.recos %>
