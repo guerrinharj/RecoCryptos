@@ -5,6 +5,9 @@ class WalletInclusionPolicy < ApplicationPolicy
     end
   end
   def create?
+    @user == user
+  end
+  def destroy?
     true
   end
 end

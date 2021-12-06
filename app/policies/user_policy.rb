@@ -5,6 +5,6 @@ class UserPolicy < ApplicationPolicy
     end
   end
   def wallet?
-    true
+    @user == user
   end
 end

@@ -17,5 +17,6 @@ Rails.application.routes.draw do
     end
     resources :wallet_inclusions, only: [:create]
   end
+  resources :wallet_inclusions, only: [:destroy]
   get '/ranking', to: "users#index", as: :ranking
 end
