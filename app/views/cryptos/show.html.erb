@@ -48,6 +48,9 @@
 
   <div class="comment-box">
     <div class="show-comment-box">
+    <% if @comments.empty? %>
+        <h4> Be the first to comment about this crypto! </h4>
+      <% else %>
       <ul>
       <% @comments.each do |comment|%>
       <li>
@@ -77,6 +80,7 @@
       </li>
       <% end %>
       </ul>
+      <% end %>
     </div>
 
     <div class="add-comment-box">
