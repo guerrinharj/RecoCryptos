@@ -39,3 +39,15 @@
 .user-column div {
   transform: translateY(-10px)
 }
+
+@media (max-width: 600px) {
+
+  .users-inner {
+    width: 88%;
+  }
+
+  .users-inner th, td {
+    padding: 20px 30px !important
+  }
+
+}
