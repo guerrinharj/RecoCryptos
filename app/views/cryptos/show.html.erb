@@ -39,7 +39,10 @@
 <ul>
  <% @comments.each do |comment|%>
  <li class="m-4">
-  <p> <%= comment.id %> <%= comment.content %> <%= comment.is_edited ? "(edited)" : "" %><p>
+  <p id="<%= comment.id %>">  <%= comment.content %> <%= comment.is_edited ? "(edited)" : "" %><p>
+  <% if comment.user == current_user && policy(comment).update?  %>
+    <%= link_to 'Edit', comment_path(comment), method: :patch%>
+  <% end %>
   <% if comment.user == current_user && policy(comment).destroy?  %>
     <%= link_to 'Delete', comment_path(comment), method: :delete%>
   <% end %>

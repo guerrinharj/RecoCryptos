@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   resources :cryptos, only: [:index, :show, :update] do
     resources :likes, only: [:create]
-    resources :comments, only: [:create] do
+    resources :comments, only: [:create, :update] do
       resources :recos, only: [:create]
     end
   end
