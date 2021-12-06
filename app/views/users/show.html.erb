@@ -7,11 +7,12 @@
     <h1> <%= @user.username %> </h1>
     <p class="user_bio"><%= @user.bio %> </p>
 
-    <p> <%= @user.username %>  has <%= @user.recos %> recos, mostly
-    <%= @most_recos %> and its favourites cryptos are:
+    <p> <%= @user.username %>  has <%= @user.recos %> recos, and its favourites cryptos are:
+      <ul>
       <% @user.likes.each do |like| %>
-      <%= like.crypto.name %>,
+        <li><%= link_to like.crypto.name, crypto_path(like.crypto) %></li>
       <% end %>
+      </ul>
     </p>
   </div>
 </div>
