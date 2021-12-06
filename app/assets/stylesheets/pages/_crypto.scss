@@ -22,17 +22,17 @@
   background-color: lightblue;
 }
 
-::-webkit-scrollbar {
+.show-comment-box  ::-webkit-scrollbar {
   width: 10px;
   background: lightblue
 }
 
-::-webkit-scrollbar-thumb {
+.show-comment-box  ::-webkit-scrollbar-thumb {
   background: black;
   width: 2px
 }
 
-::-webkit-scrollbar-track {
+.show-comment-box  ::-webkit-scrollbar-track {
   background: lightblue;
 }
 
