@@ -15,31 +15,29 @@
 
   </div>
 
-  <div class="d-flex justify-content-center w-90 align-items-center">
+  <div class="cryptos-inner">
 
     <table>
       <tr>
-        <th> <%= sortable 'symbol', "Symbol" %> </th>
-        <th> <%= sortable 'name', "Name" %> </th>
-        <th> <%= sortable 'price', "Price" %>  </th>
-        <th> <%= sortable 'volume_24h', "Volume_24h" %> </th>
-        <th> <%= sortable 'percent_change_1h', "1h" %></th>
-        <th> <%= sortable 'percent_change_24h', "1d" %> </th>
-        <th> <%= sortable 'percent_change_7d', "7d" %> </th>
-        <th> <%= sortable 'percent_change_30d', "30d" %> </th>
-        <th> <%= sortable 'market_cap', "Mkt. Cap" %> </th>
+        <th class="symbol_column"> <%= sortable 'symbol', "Symbol" %> </th>
+        <th class="name_column"> <%= sortable 'name', "Name" %> </th>
+        <th class="price_column"> <%= sortable 'price', "Price" %>  </th>
+        <th class="volume_24h_column"> <%= sortable 'volume_24h', "Volume 24h" %> </th>
+        <th class="percent_change_1h_column"> <%= sortable 'percent_change_1h', "1h" %></th>
+        <th class="percent_change_1d_column"> <%= sortable 'percent_change_24h', "1d" %> </th>
+        <th class="percent_change_7d_column"> <%= sortable 'percent_change_7d', "7d" %> </th>
+        <th class="percent_change_30d_column"> <%= sortable 'percent_change_30d', "30d" %> </th>
       </tr>
         <% @cryptos.each do |crypto| %>
       <tr>
-        <td> <%= crypto.symbol %> </td>
-        <td> <%= link_to crypto.name, crypto_path(crypto) %> </td>
-        <td> <%= crypto.price.round(3) %> </td>
-        <td> <%= crypto.volume_24h.round(2) %> </td>
-        <td style='<%= crypto.percent_change_1h.negative? ? "color: red" : "color: green" %>'> <%= crypto.percent_change_1h.round(2) %> </td>
-        <td style='<%= crypto.percent_change_24h.negative? ? "color: red" : "color: green" %>'> <%= crypto.percent_change_24h.round(2) %> </td>
-        <td style='<%= crypto.percent_change_7d.negative? ? "color: red" : "color: green" %>'> <%= crypto.percent_change_7d.round(2) %> </td>
-        <td style='<%= crypto.percent_change_30d.negative? ? "color: red" : "color: green" %>'> <%= crypto.percent_change_30d.round(2) %> </td>
-        <td> <%= crypto.market_cap %> </td>
+        <td class="symbol_column"> <%= crypto.symbol %> </td>
+        <td class="name_column"> <%= link_to crypto.name, crypto_path(crypto) %> </td>
+        <td class="price_column"> $<%= number_with_delimiter(crypto.price.round(2)) %> </td>
+        <td class="volume_24h_column"> $<%= number_with_delimiter(crypto.volume_24h.round(2)) %> </td>
+        <td class="percent_change_1h_column" style='<%= crypto.percent_change_1h.negative? ? "color: red" : "color: green" %>'> <%= crypto.percent_change_1h.round(2) %> %</td>
+        <td class="percent_change_1d_column" style='<%= crypto.percent_change_24h.negative? ? "color: red" : "color: green" %>'> <%= crypto.percent_change_24h.round(2) %>% </td>
+        <td class="percent_change_7d_column" style='<%= crypto.percent_change_7d.negative? ? "color: red" : "color: green" %>'> <%= crypto.percent_change_7d.round(2) %>% </td>
+        <td class="percent_change_30d_column" style='<%= crypto.percent_change_30d.negative? ? "color: red" : "color: green" %>'> <%= crypto.percent_change_30d.round(2) %>% </td>
       </tr>
         <% end %>
     </table>
