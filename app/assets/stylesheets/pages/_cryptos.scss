@@ -36,15 +36,25 @@
   align-items: center;
 }
 
+.cryptos-inner table {
+  border-collapse: collapse;
+}
+
 .cryptos-inner table th, .cryptos-inner table td {
-  padding: 0px 30px 15px 0px!important;
+  padding: 0px 30px 15px 0px;
 }
 
 table a {
   color: black!important
 }
 
-
+.sticky {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background-color: #F4F4F4;
+  padding: 30px 30px 15px 0!important;
+}
 
 @media (max-width: 600px) {
 
@@ -69,5 +79,6 @@ table a {
 .search-wrapper {
   display: none;
 }
+
 
 }

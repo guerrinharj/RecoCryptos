@@ -27,10 +27,12 @@ import "bootstrap";
 
 // Internal imports, e.g:
 import { initWalletTable } from "../plugins/init_wallet_table";
+import { headIndexFixer } from "../plugins/head_index_fixer";
 // import { initSelect2 } from '../components/init_select2';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+  headIndexFixer();
   initWalletTable();
 });
