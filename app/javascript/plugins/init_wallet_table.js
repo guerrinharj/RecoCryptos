@@ -74,7 +74,5 @@ const initWalletTable = () => {
       portfolio.innerText = parseInt(actualBrut.innerText, 10) / parseInt(totalBrut.innerText, 10) * 100 + "%"
 
     })
-
-
 }
 export { initWalletTable }
