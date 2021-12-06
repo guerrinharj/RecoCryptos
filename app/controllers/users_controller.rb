@@ -14,5 +14,7 @@ class UsersController < ApplicationController
   def show
   @user = User.find(params[:id])
   authorize @user
+  @recos = Reco.where(user_id: @user)
+  @most_recos = @recos.group(:crypto).name
   end
 end
