@@ -90,7 +90,7 @@ display: inline-block;
     z-index: -1;
   }
   &:hover {
-    color: #fff;
+    color: inherit;
     &:before {
       width: 100%;
     }

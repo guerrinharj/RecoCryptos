@@ -54,6 +54,15 @@ table a {
   width: 100%;
   background-color: #F4F4F4;
   padding: 30px 30px 15px 0!important;
+  transition: 0.4s ease;
+}
+
+@media (max-width: 1300px) {
+
+  .search-wrapper {
+    display: none;
+  }
+
 }
 
 @media (max-width: 600px) {
@@ -75,10 +84,5 @@ table a {
   display: block;
   margin: 0 20px;
 }
-
-.search-wrapper {
-  display: none;
-}
-
 
 }
