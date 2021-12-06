@@ -101,6 +101,7 @@ display: inline-block;
 
   .navbar-lewagon {
     width: 95%;
+    margin: 10px auto;
   }
 
   .navbar-light .navbar-toggler {
@@ -113,6 +114,7 @@ display: inline-block;
 
   .nav-item:last-child {
     margin: 20px 0;
+    padding-right: 0;
 }
 
 }

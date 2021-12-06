@@ -58,6 +58,10 @@
   align-items: center;
 }
 
+.c-a {
+  display: flex;
+}
+
 .time-ago {
   font-style: italic;
   font-size: 10px;
@@ -79,4 +83,52 @@
     width: 100%;
     margin: 20px 0;
     height: 10vh
+}
+
+@media(max-width: 600px) {
+
+  .the-crypto-wrapper {
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .crypto-box, .comment-box {
+    width: 90%;
+    margin: auto;
+  }
+
+  .crypto-main-box {
+    text-align: center;
+}
+
+  .crypto-info-box ul {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  .crypto-info-box h5 {
+    font-size: 12px;
+    border: none;
+  }
+
+  .comment-actions {
+    display: block;
+  }
+
+  .c-a {
+    margin-bottom: 20px;
+  }
+
+  .crypto-info-box li {
+    font-size: 12px;
+  }
+
+  .add-comment-box {
+    text-align: center;
+  }
+
+  .add-comment-box h5 {
+    font-size: 15px;
+  }
 }

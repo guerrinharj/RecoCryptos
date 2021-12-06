@@ -10,7 +10,7 @@
       <div class="">
         <% if @found_like.empty? %>
           <%= simple_form_for([@crypto, @like], remote: true) do |f| %>
-            <%= f.submit class: "crypto-btn" %>
+            <%= f.submit "Like!", class: "crypto-btn" %>
           <% end %>
         <% else %>
         <% if @found_like && policy(@found_like).destroy? %>
@@ -26,17 +26,21 @@
 
     <div class="crypto-info-box">
       <ul>
-        <li> <h5>Max Supply:</h5>  $ <%= number_with_delimiter(@crypto.max_supply.round(2)) %> </li>
-        <li> <h5>Circulating Supply:</h5> $ <%= number_with_delimiter(@crypto.circulating_supply.round(2)) %> </li>
-        <li> <h5>Total Supply:</h5> $ <%= number_with_delimiter(@crypto.total_supply.round(2)) %> </li>
-        <li> <h5>Volume 24h:</h5> $ <%= number_with_delimiter(@crypto.volume_24h.round(2)) %> </li>
-        <li> <h5>Volume Change 24h:</h5>  $ <%= number_with_delimiter(@crypto.volume_change_24h.round(2)) %> </li>
-        <li> <h5>Percent Change 1h:</h5>  <span style="<%=@crypto.percent_change_1h.negative? ? 'color: red' : 'color: green'%>"><%= number_with_delimiter(@crypto.percent_change_1h.round(2)) %>%</span> </li>
-        <li> <h5>Percent Change 1d:</h5>  <span style="<%=@crypto.percent_change_24h.negative? ? 'color: red' : 'color: green'%>"><%= @crypto.percent_change_24h.round(2) %>%</span> </li>
-        <li> <h5>Percent Change 7d:</h5>  <span style="<%=@crypto.percent_change_7d.negative? ? 'color: red' : 'color: green'%>"><%= @crypto.percent_change_7d.round(2) %>%</span> </li>
-        <li> <h5>Percent Change 30d:</h5>  <span style="<%=@crypto.percent_change_30d.negative? ? 'color: red' : 'color: green'%>"><%= @crypto.percent_change_30d.round(2) %>%</span> </li>
-        <li> <h5>Market Cap:</h5>  $ <%= number_with_delimiter(@crypto.market_cap.round(2)) %> </li>
-        <li> <h5>Market Cap Dominance:</h5>  $ <%= number_with_delimiter(@crypto.market_cap_dominance.round(2)) %> </li>
+        <div>
+          <li> <h5>Max Supply:</h5>  $ <%= number_with_delimiter(@crypto.max_supply.round(2)) %> </li>
+          <li> <h5>Circulating Supply:</h5> $ <%= number_with_delimiter(@crypto.circulating_supply.round(2)) %> </li>
+          <li> <h5>Total Supply:</h5> $ <%= number_with_delimiter(@crypto.total_supply.round(2)) %> </li>
+          <li> <h5>Volume 24h:</h5> $ <%= number_with_delimiter(@crypto.volume_24h.round(2)) %> </li>
+          <li> <h5>Volume Change 24h:</h5>  $ <%= number_with_delimiter(@crypto.volume_change_24h.round(2)) %> </li>
+        </div>
+        <div>
+          <li> <h5>Percent Change 1h:</h5>  <span style="<%=@crypto.percent_change_1h.negative? ? 'color: red' : 'color: green'%>"><%= number_with_delimiter(@crypto.percent_change_1h.round(2)) %>%</span> </li>
+          <li> <h5>Percent Change 1d:</h5>  <span style="<%=@crypto.percent_change_24h.negative? ? 'color: red' : 'color: green'%>"><%= @crypto.percent_change_24h.round(2) %>%</span> </li>
+          <li> <h5>Percent Change 7d:</h5>  <span style="<%=@crypto.percent_change_7d.negative? ? 'color: red' : 'color: green'%>"><%= @crypto.percent_change_7d.round(2) %>%</span> </li>
+          <li> <h5>Percent Change 30d:</h5>  <span style="<%=@crypto.percent_change_30d.negative? ? 'color: red' : 'color: green'%>"><%= @crypto.percent_change_30d.round(2) %>%</span> </li>
+          <li> <h5>Market Cap:</h5>  $ <%= number_with_delimiter(@crypto.market_cap.round(2)) %> </li>
+          <li> <h5>Market Cap Dominance:</h5>  $ <%= number_with_delimiter(@crypto.market_cap_dominance.round(2)) %> </li>
+        </div>
       </ul>
     </div>
 
@@ -47,22 +51,26 @@
       <ul>
       <% @comments.each do |comment|%>
       <li>
-       <div class="comment-actions">
-        <p id="<%= comment.id %>">  <%= comment.content %> <%= comment.is_edited ? "(edited)" : "" %><p>
-        <% if comment.recos.group_by(&:user).include?(current_user) %>
-          <% comment.recos.each do |reco| %>
-            <% if reco.user == current_user %>
-              <%= link_to 'You recoed!', reco_path(reco), class: "fourth-crypto-btn", method: :delete%>
+        <div class="comment-actions">
+        <div class="c-t">
+          <p id="<%= comment.id %>">  <%= comment.content %> <%= comment.is_edited ? "(edited)" : "" %><p>
+        </div>
+          <div class="c-a">
+          <% if comment.recos.group_by(&:user).include?(current_user) %>
+            <% comment.recos.each do |reco| %>
+              <% if reco.user == current_user %>
+                <%= link_to 'You recoed!', reco_path(reco), class: "fourth-crypto-btn", method: :delete%>
+              <% end %>
+            <% end%>
+            <% else %>
+            <%= simple_form_for([@crypto, comment, @reco]) do |f| %>
+              <%= f.submit "Reco!", class: "third-crypto-btn"  %>
             <% end %>
-          <% end%>
-          <% else %>
-          <%= simple_form_for([@crypto, comment, @reco]) do |f| %>
-            <%= f.submit "Reco!", class: "third-crypto-btn"  %>
           <% end %>
-        <% end %>
-        <% if comment.user == current_user && policy(comment).destroy?  %>
-          <%= link_to 'Delete', comment_path(comment), method: :delete, remote: true, class: "third-crypto-btn"%>
-        <% end %>
+          <% if comment.user == current_user && policy(comment).destroy?  %>
+            <%= link_to 'Delete', comment_path(comment), method: :delete, remote: true, class: "third-crypto-btn"%>
+          <% end %>
+          </div>
         </div>
          <h6> <%= cl_image_tag comment.user.photo.key, width: 30, height: 20, class: "avatar" %> <span class="username-comment"> <%= link_to comment.user.username, user_path(comment.user) %></span>  <span class="time-ago"> <%= time_ago_in_words(comment.created_at) %> ago </span> </h6>
 
