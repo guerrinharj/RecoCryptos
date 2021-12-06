@@ -2,6 +2,7 @@ const initWalletTable = () => {
   const totalInvested = document.querySelector("#totalinvested") //atualizar
   const totalProfit = document.querySelector("#totalprofit") //atualizar
   const totalPercent = document.querySelector("#totalpercent") //atualizar
+  const totalBrut = document.querySelector("#totalbrut") //atualizar
 
   const rows = document.querySelectorAll(".coinrow")
     rows.forEach((row) => {
@@ -11,7 +12,7 @@ const initWalletTable = () => {
       const price = row.querySelector(".price")
       const dif = row.querySelector(".dif") //atualizar
       const profit = row.querySelector(".profit") //atualizar
-      //const portfolio = row.querySelector(".portfolio") //atualizar
+      const actualBrut = row.querySelector(".actual-brut") //atualizar
 
       //updating costs
       cost.innerText = parseInt(buying_price.innerText, 10) * parseInt(amount.innerText, 10)
@@ -20,6 +21,10 @@ const initWalletTable = () => {
       dif.innerText = Math.round(difference * 100) / 100
       //updating profit
       profit.innerText = (parseInt(price.innerText, 10) - parseInt(buying_price.innerText, 10)) * parseInt(amount.innerText, 10)
+
+      //updating actual-brut
+      actualBrut.innerText = parseInt(price.innerText, 10) * parseInt(amount.innerText, 10)
+
     })
 
       //updating totalinvested
@@ -47,6 +52,29 @@ const initWalletTable = () => {
       //updating totaldif
       let totalDifference = parseInt(totalProfit.innerText, 10) / parseInt(totalInvested.innerText, 10) * 100
       totalPercent.innerText = Math.round(totalDifference * 100) / 100
+
+      //updating totalbrut
+      let bruts = new Array
+      const brutsArray = document.querySelectorAll(".actual-brut")
+      brutsArray.forEach((brut) => {
+        bruts.push(brut)
+      })
+      bruts = bruts.map((element) => {
+        return parseInt(element.innerText, 10)
+      })
+      totalBrut.innerText = bruts.reduce((previousValue, currentValue) => previousValue + currentValue)
+      console.log(totalBrut)
+
+      //updating totalbrut%
+
+    rows.forEach((row) => {
+      const actualBrut = row.querySelector(".actual-brut") //atualizar
+      const portfolio = row.querySelector(".portfolio") //atualizar
+
+      portfolio.innerText = parseInt(actualBrut.innerText, 10) / parseInt(totalBrut.innerText, 10) * 100 + "%"
+
+    })
+
 
 }
 export { initWalletTable }
