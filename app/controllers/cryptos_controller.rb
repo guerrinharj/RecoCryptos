@@ -26,7 +26,7 @@ class CryptosController < ApplicationController
     @found_like = Like.where(crypto_id: @crypto.id, user_id: current_user)
     @like = Like.new
 
-    @comments = Comment.where(crypto_id: @crypto)
+    @comments = Comment.where(crypto_id: @crypto).order('created_at DESC')
     @comment = Comment.new
 
     @reco = Reco.new
