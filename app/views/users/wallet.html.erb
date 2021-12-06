@@ -1,4 +1,10 @@
 <h1>Wallet</h1>
+<%= simple_form_for [@user, @wallet_inclusion] do |f| %>
+  <%= f.association :crypto %>
+  <%= f.input :amount %>
+  <%= f.input :buying_price %>
+  <%= f.submit %>
+<% end %>
 <div>
 <table>
   <tr>
@@ -42,6 +48,7 @@
     <td>  <span class="dif"></span></td>
     <td> <span class="profit"></span> </td>
     <td>  <span class="portfolio"></span></td>
+    <td> <%= link_to "delete", wallet_inclusion_path(coin), method:"DELETE" %> </td>
     <td>  <span class="actual-brut"></span></td>
   </tr>
   <% end %>
