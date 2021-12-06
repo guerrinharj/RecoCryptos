@@ -21,6 +21,7 @@ class UsersController < ApplicationController
   def wallet
     @user = User.find(params[:id])
     @wallet_inclusions = WalletInclusion.where(user: @user)
+    @wallet_inclusion = WalletInclusion.new
     authorize @user
     @cryptos = Crypto.all
     get_api(@cryptos)

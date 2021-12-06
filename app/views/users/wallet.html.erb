@@ -1,4 +1,11 @@
 <h1>Wallet</h1>
+<!-- app/views/restaurants/_form.html.erb -->
+<%= simple_form_for [@user, @wallet_inclusion] do |f| %>
+  <%= f.association :crypto %>
+  <%= f.input :amount %>
+  <%= f.input :buying_price %>
+  <%= f.submit %>
+<% end %>
 <div>
 <table>
   <tr>
