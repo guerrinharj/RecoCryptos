@@ -1,5 +1,4 @@
 <h1>Wallet</h1>
-<!-- app/views/restaurants/_form.html.erb -->
 <%= simple_form_for [@user, @wallet_inclusion] do |f| %>
   <%= f.association :crypto %>
   <%= f.input :amount %>
@@ -49,6 +48,7 @@
     <td>  <span class="dif"></span></td>
     <td> <span class="profit"></span> </td>
     <td>  <span class="portfolio"></span></td>
+    <td> <%= link_to "delete", wallet_inclusion_path(coin), method:"DELETE" %> </td>
     <td>  <span class="actual-brut"></span></td>
   </tr>
   <% end %>
