@@ -46,24 +46,25 @@
     <div class="show-comment-box">
       <ul>
       <% @comments.each do |comment|%>
-      <li class="m-4">
+      <li>
+       <div class="comment-actions">
         <p id="<%= comment.id %>">  <%= comment.content %> <%= comment.is_edited ? "(edited)" : "" %><p>
-        <% if comment.user == current_user && policy(comment).destroy?  %>
-          <%= link_to 'Delete', comment_path(comment), method: :delete, remote: true%>
-        <% end %>
-        <h4> by <%= link_to comment.user.username, user_path(comment.user) %> at <span> <%= comment.created_at %> </span> </h4>
-
         <% if comment.recos.group_by(&:user).include?(current_user) %>
           <% comment.recos.each do |reco| %>
             <% if reco.user == current_user %>
-              <%= link_to 'You recoed!', reco_path(reco), class: "btn-success text-light p-2 shadow-none", method: :delete%>
+              <%= link_to 'You recoed!', reco_path(reco), class: "fourth-crypto-btn", method: :delete%>
             <% end %>
           <% end%>
           <% else %>
           <%= simple_form_for([@crypto, comment, @reco]) do |f| %>
-            <%= f.submit class: "btn-primary text-light p-2 shadow-none"  %>
+            <%= f.submit "Reco!", class: "third-crypto-btn"  %>
           <% end %>
         <% end %>
+        <% if comment.user == current_user && policy(comment).destroy?  %>
+          <%= link_to 'Delete', comment_path(comment), method: :delete, remote: true, class: "third-crypto-btn"%>
+        <% end %>
+        </div>
+         <h6> <%= cl_image_tag comment.user.photo.key, width: 30, height: 20, class: "avatar" %> <span class="username-comment"> <%= link_to comment.user.username, user_path(comment.user) %></span>  <span class="time-ago"> <%= time_ago_in_words(comment.created_at) %> ago </span> </h6>
 
       </li>
       <% end %>
@@ -72,9 +73,10 @@
 
     <div class="add-comment-box">
 
+    <h5> How you feeling about this crypto now? </h5>
     <%= simple_form_for([@crypto, @comment], remote: true) do |f| %>
-        <%= f.text_field :content %>
-        <%= f.submit class: "btn-primary text-light p-2 shadow-none" %>
+        <%= f.text_field :content, class: "crypto-text-field" %>
+        <%= f.submit "Comment", class: "crypto-btn" %>
       <% end %>
 
     </div>

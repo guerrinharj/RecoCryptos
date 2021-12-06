@@ -1,5 +1,5 @@
 
-.crypto-btn, .second-crypto-btn:hover {
+.crypto-btn, .third-crypto-btn, .second-crypto-btn:hover, .fourth-crypto-btn:hover {
   background-color: lightblue;
   color: black;
   box-shadow: none;
@@ -9,7 +9,7 @@
   text-decoration: none;
 }
 
-.second-crypto-btn, .crypto-btn:hover {
+.second-crypto-btn, .fourth-crypto-btn, .crypto-btn:hover, .third-crypto-btn:hover {
   background-color: black;
   color: lightblue;
   box-shadow: none;
@@ -17,4 +17,9 @@
   border: solid 1px black!important;
   transition: 0.2s ease;
   text-decoration: none;
+}
+
+.third-crypto-btn, .fourth-crypto-btn {
+  font-size: 10px;
+  margin-right: 5px;
 }
