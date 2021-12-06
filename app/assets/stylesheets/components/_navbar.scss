@@ -96,3 +96,23 @@ display: inline-block;
     }
   }
 }
+
+@media (max-width: 600px) {
+
+  .navbar-lewagon {
+    width: 95%;
+  }
+
+  .navbar-light .navbar-toggler {
+    border: none;
+  }
+
+  .nav-item {
+    padding-left: 0px
+  }
+
+  .nav-item:last-child {
+    margin: 20px 0;
+}
+
+}

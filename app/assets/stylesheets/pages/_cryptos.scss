@@ -30,6 +30,31 @@
   transition: 0.3s ease;
 }
 
+.cryptos-inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 table a {
   color: black!important
+}
+
+
+
+@media (max-width: 600px) {
+
+.symbol_column, .volume_24h_column, .percent_change_7d_column, .percent_change_30d_column, .market_cap_column {
+  display: none;
+}
+
+.cryptos-inner {
+  display: block;
+  margin: 0 10px;
+}
+
+.search-wrapper {
+  display: none;
+}
+
 }
