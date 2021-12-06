@@ -17,4 +17,9 @@ Rails.application.routes.draw do
     end
   end
   get '/ranking', to: "users#index", as: :ranking
+
+  require "sidekiq/web"
+  authenticate :user, ->(user) { user.admin? } do
+    mount Sidekiq::Web => '/sidekiq'
+  end
 end
