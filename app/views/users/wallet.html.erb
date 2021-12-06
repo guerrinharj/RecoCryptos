@@ -1,0 +1,49 @@
+<h1>Wallet</h1>
+<div>
+<table>
+  <tr>
+    <th> Total Invested </th>
+    <th> Profit/Loss </th>
+    <th> % </th>
+  </tr>
+    <td> <span id="totalinvested"></span></td>
+    <td> <span id="totalprofit"></span></td>
+    <td> <span id="totalpercent"></span></td>
+    <td> <span id="totalbrut"></span></td>
+  <tr>
+</table>
+</div>
+
+<div>
+<table>
+  <tr>
+    <th> # </th>
+    <th> Crypto </th>
+    <th> Code </th>
+    <th> Amount </th>
+    <th> Buying Price </th>
+    <th> Date </th>
+    <th> Cost </th>
+    <th> Actual Price </th>
+    <th> Dif% </th>
+    <th> Profit/Loss </th>
+    <th> % of Portfolio </th>
+  </tr>
+  <% @wallet_inclusions.each_with_index do |coin, index| %>
+  <tr class="coinrow">
+    <td> <%= index+1 %></td>
+    <td> <%= coin.crypto.name %> </td>
+    <td> <%= coin.crypto.symbol %> </td>
+    <td class="amount"> <%= coin.amount %> </td>
+    <td class="buying_price"> <%= coin.buying_price %> </td>
+    <td>  date #todo</td>
+    <td>  <span class="cost"></span></td>
+    <td class="price"> <%= coin.crypto.price.round(2) %> </td>
+    <td>  <span class="dif"></span></td>
+    <td> <span class="profit"></span> </td>
+    <td>  <span class="portfolio"></span></td>
+    <td>  <span class="actual-brut"></span></td>
+  </tr>
+  <% end %>
+</table>
+</div>

@@ -105,6 +105,17 @@ ActiveRecord::Schema.define(version: 2021_12_02_224808) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "wallet_inclusions", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "crypto_id", null: false
+    t.integer "buying_price"
+    t.integer "amount"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["crypto_id"], name: "index_wallet_inclusions_on_crypto_id"
+    t.index ["user_id"], name: "index_wallet_inclusions_on_user_id"
+  end
+
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "comments", "cryptos"
   add_foreign_key "comments", "users"
@@ -113,4 +124,6 @@ ActiveRecord::Schema.define(version: 2021_12_02_224808) do
   add_foreign_key "recos", "comments"
   add_foreign_key "recos", "cryptos"
   add_foreign_key "recos", "users"
+  add_foreign_key "wallet_inclusions", "cryptos"
+  add_foreign_key "wallet_inclusions", "users"
 end
