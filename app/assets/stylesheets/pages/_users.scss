@@ -1,0 +1,53 @@
+.users-wrapper {
+  margin: auto;
+
+}
+
+.ranking-title {
+  font-family: $headers-font;
+  margin: 20px 0;
+  font-weight: 800;
+  font-size: 2rem;
+}
+
+.users-inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: lightblue;
+  padding: 20px;
+  width: 47%;
+  border: solid 1px black;
+  border-radius: 10px;
+  margin: auto;
+}
+
+.users-inner th, td {
+  padding: 20px 100px!important;
+  font-size: 1.2rem;
+}
+
+
+
+.user-column div, .reco-column, .position-column {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-column div {
+  transform: translateY(-10px)
+}
+
+@media (max-width: 600px) {
+
+  .users-inner {
+    width: 88%;
+  }
+
+  .users-inner th, td {
+    padding: 20px 30px !important
+  }
+
+}
