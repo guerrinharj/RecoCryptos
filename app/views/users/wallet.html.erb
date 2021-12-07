@@ -1,11 +1,19 @@
-<h1>Wallet</h1>
-<%= simple_form_for [@user, @wallet_inclusion] do |f| %>
-  <%= f.association :crypto %>
-  <%= f.input :amount %>
-  <%= f.input :buying_price %>
-  <%= f.submit %>
-<% end %>
+<%= render 'shared/navbar' %>
+
 <div>
+  <h1 class="wallet-title">Wallet</h1>
+  <div>
+    <%= simple_form_for [@user, @wallet_inclusion], html: {class: "form-inline"} do |f| %>
+      <div class="form-group mb-2">
+        <%= f.association :crypto %>
+        <%= f.input :amount %>
+        <%= f.input :buying_price %>
+        <%= f.submit class:"btn crypto-btn" %>
+      </div>
+    <% end %>
+  </div>
+</div>
+<div class= "text-justify" >
 <table>
   <tr>
     <th> Total Invested </th>
