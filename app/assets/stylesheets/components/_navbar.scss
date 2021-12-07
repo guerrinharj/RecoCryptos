@@ -4,7 +4,8 @@
   border-radius: 20px;
   margin: 30px auto;
   width: 77%;
-  background-color: lightblue
+  background-color: lightblue;
+  padding: 10px 60px;
 }
 
 .navbar .navbar-expand-sm .navbar-light .navbar-lewagon {
@@ -28,9 +29,6 @@ align-items: center;
 justify-content: center;
 }
 
-.nav-item:last-child {
-  padding-right: 50px
-}
 
 .dropdown-square {
   margin-top: 13px;
@@ -102,6 +100,7 @@ display: inline-block;
   .navbar-lewagon {
     width: 95%;
     margin: 10px auto;
+    padding: 10px 30px;
   }
 
   .navbar-light .navbar-toggler {
