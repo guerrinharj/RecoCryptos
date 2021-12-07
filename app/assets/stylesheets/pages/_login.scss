@@ -1,15 +1,23 @@
-.form-wrapper {
+.form-wrapper, .form-edit-wrapper {
   display: flex;
   justify-content: center;
   height: 100vh;
   width: 100vw;
-  align-items: center
+  align-items: center;
+}
+
+.form-edit-wrapper {
+  height: auto!important;
 }
 
 .form-inner {
   width: 80%;
   display: flex;
   justify-content: center;
+}
+
+.form-edit-inner {
+  margin: 20px 0;
 }
 
 .form-login {
@@ -43,6 +51,11 @@
   background-color: black;
   transition: 0.2s ease;
   color: white;
+}
+
+.back-edit {
+  top: 5px;
+  left: 5px;
 }
 
 @media (max-width: 600px) {

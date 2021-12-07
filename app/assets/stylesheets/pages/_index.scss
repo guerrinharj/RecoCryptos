@@ -6,6 +6,10 @@
 @import "users";
 @import "user";
 
+body {
+  overflow-x: hidden
+}
+
 ul {
   list-style-type: none;
   padding: 0;

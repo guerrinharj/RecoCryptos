@@ -7,4 +7,8 @@ class UserPolicy < ApplicationPolicy
   def wallet?
     @user == user
   end
+
+  def update?
+    record.user == user
+  end
 end
