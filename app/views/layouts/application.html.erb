@@ -14,8 +14,10 @@
 
   <body>
     <%= render 'shared/flashes' %>
-    <%= render 'shared/navbar' unless params[:action] == "home" %>
-    <%= yield %>
-    <%= render 'shared/footer' unless params[:action] == "home" %>
+    <main>
+      <%= render 'shared/navbar' unless params[:action] == "home" %>
+      <%= yield %>
+      <%= render 'shared/footer' unless params[:action] == "home" %>
+    </main>
   </body>
 </html>

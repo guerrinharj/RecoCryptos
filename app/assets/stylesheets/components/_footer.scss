@@ -7,7 +7,7 @@
   height: 60px;
   padding: 40px 50px;
   color: rgba(0, 0, 0, 0.3);
-  width: 77%;
+  width: auto;
   border: solid 1px #000;
   border-radius: 20px;
 }
@@ -75,7 +75,7 @@
 
   .footer {
     width: 95%;
-    margin: 50px auto;
+    margin: 50px auto 20px;
     justify-content: center;
   }
 

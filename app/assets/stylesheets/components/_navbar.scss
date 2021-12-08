@@ -3,7 +3,7 @@
   border: solid 1px #000;
   border-radius: 20px;
   margin: 30px auto;
-  width: 77%;
+  width: auto;
   background-color: lightblue;
   padding: 10px 60px;
 }
@@ -48,6 +48,10 @@ cursor: pointer;
   border: solid 1px black;
   transition: 0.2s ease;
   background-color: lightblue;
+}
+
+.dropdown-item:hover {
+  background: none
 }
 
 

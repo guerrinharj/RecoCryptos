@@ -34,17 +34,17 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 75%;
+  width: 90%;
   margin: auto;
-
 }
 
 .cryptos-inner table {
   border-collapse: collapse;
+  margin: auto;
 }
 
 .cryptos-inner table th, .cryptos-inner table td {
-  padding: 0px 30px 15px 0px;
+  padding: 0px 0px 15px 0px;
   text-align: center;
 }
 
@@ -80,14 +80,8 @@ table a {
   display: none;
 }
 
-.percent_change_1h_column, .percent_change_1d_column {
-  font-size: 12px
-}
-
 .cryptos-inner {
   display: block;
-  margin: 0 20px;
-  width: 95%
 }
 
 }
