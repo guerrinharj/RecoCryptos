@@ -71,7 +71,7 @@ const initWalletTable = () => {
       const actualBrut = row.querySelector(".actual-brut") //atualizar
       const portfolio = row.querySelector(".portfolio") //atualizar
 
-      portfolio.innerText = parseInt(actualBrut.innerText, 10) / parseInt(totalBrut.innerText, 10) * 100 + "%"
+      portfolio.innerText = Math.round(parseInt(actualBrut.innerText, 10) / parseInt(totalBrut.innerText, 10) * 100) + "%"
 
     })
 }
