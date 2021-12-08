@@ -4,4 +4,5 @@ class WalletInclusion < ApplicationRecord
 
   validates :buying_price, presence: true
   validates :amount, presence: true
+  validates :date_wallet, presence: true
 end

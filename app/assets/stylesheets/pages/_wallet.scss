@@ -1,9 +1,10 @@
-.wallet-title {
+.wallet-inner {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     width: 75%;
-    margin: auto;
+    /*margin: auto;*/
     margin-top: 20px;
 }
 .table-wallet {

@@ -1,13 +1,13 @@
 <div class="wallet-title">
   <h1>Wallet</h1>
 </div>
-<div class="wallet-title">
+<div class="wallet-inner">
   <%= simple_form_for [@user, @wallet_inclusion], html: {class: "form-inline"} do |f| %>
     <div class="form-group mb-2">
       <%= f.association :crypto %>
       <%= f.input :amount %>
       <%= f.input :buying_price %>
-      <%#= f.input :date %>
+      <%= f.input :date_wallet, as: :date, date_separator: '<span>:</span>' %>
       <%= f.submit class:"btn crypto-btn" %>
     </div>
   <% end %>
@@ -48,7 +48,7 @@
     <td class="content-wallet symbol"> <%= coin.crypto.symbol %> </td>
     <td class="content-wallet amount"> <%= coin.amount %> </td>
     <td class="content-wallet buying_price"> <%= coin.buying_price %> </td>
-    <td class="content-wallet date">  date #todo</td>
+    <td class="content-wallet date"> <%= coin.date_wallet %> </td>
     <td class="content-wallet cost">  <span class="cost"></span></td>
     <td class="content-wallet price"> <%= coin.crypto.price.round(2) %> </td>
     <td class="content-wallet dif">  <span class="dif"></span></td>
