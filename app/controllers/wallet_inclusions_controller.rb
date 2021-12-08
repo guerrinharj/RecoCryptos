@@ -4,9 +4,7 @@ class WalletInclusionsController < ApplicationController
     @wallet_inclusion = WalletInclusion.new(wallet_inclusions_params)
     authorize @wallet_inclusion
     @wallet_inclusion.user = @user
-    if @wallet_inclusion.save
-      redirect_to wallet_user_path(@user)
-    end
+    redirect_to wallet_user_path(@user)
   end
 
   def destroy
