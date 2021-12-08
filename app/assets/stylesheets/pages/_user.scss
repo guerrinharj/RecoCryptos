@@ -3,7 +3,7 @@
     justify-content: center;
 }
 
-.user-inner {
+.user-inner, .form-edit-inner {
   text-align: center;
   background: lightblue;
   border: solid 1px black;
@@ -13,7 +13,7 @@
   position: relative;
 }
 
-.user-inner .edit-user {
+.user-inner .edit-user, .edit-title {
   position: absolute;
   top: -10px;
   left: -10px;
@@ -47,10 +47,19 @@
 }
 
 
+.form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 20%;
+  margin: auto;
+}
+
+
 @media (max-width: 600px) {
 
-  .user-inner {
-    width: 95%;
+  .user-inner, .form-edit-inner {
+    width: 85%;
     margin: 10px auto;
   }
 
