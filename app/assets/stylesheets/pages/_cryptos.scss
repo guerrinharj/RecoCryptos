@@ -34,6 +34,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 75%;
+  margin: auto;
+
 }
 
 .cryptos-inner table {
@@ -42,6 +45,7 @@
 
 .cryptos-inner table th, .cryptos-inner table td {
   padding: 0px 30px 15px 0px;
+  text-align: center;
 }
 
 table a {
@@ -83,6 +87,7 @@ table a {
 .cryptos-inner {
   display: block;
   margin: 0 20px;
+  width: 95%
 }
 
 }
