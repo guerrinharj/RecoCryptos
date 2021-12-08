@@ -1,14 +1,19 @@
-<div class="wallet-title">
-  <h1>Wallet</h1>
-</div>
+
 <div class="wallet-inner">
+  <div class="wallet-title crypto-btn">
+   WALLET!
+  </div>
   <%= simple_form_for [@user, @wallet_inclusion], html: {class: "form-inline"} do |f| %>
     <div class="form-group mb-2">
+    <div class="form-row">
       <%= f.association :crypto %>
       <%= f.input :amount %>
       <%= f.input :buying_price %>
+    </div>
+      <div class="form-row">
       <%= f.input :date_wallet, as: :date, date_separator: '<span>:</span>' %>
-      <%= f.submit class:"btn crypto-btn" %>
+      <%= f.submit class:"btn second-crypto-btn" %>
+      </div>
     </div>
   <% end %>
 </div>
