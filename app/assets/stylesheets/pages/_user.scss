@@ -10,6 +10,13 @@
   border-radius: 10px;
   width: 50%;
   padding: 20px;
+  position: relative;
+}
+
+.user-inner .edit-user {
+  position: absolute;
+  top: -10px;
+  left: -10px;
 }
 
 .user-inner img, h1 {
