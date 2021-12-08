@@ -1,6 +1,6 @@
 <div class="form-edit-wrapper">
  <div class="form-edit-inner flex-wrap text-center">
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<div class="edit-title crypto-btn"><h2>Edit <%= resource_name.to_s.humanize %></h2></div>
 
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
     <%= f.error_notification %>
@@ -36,15 +36,15 @@
                   input_html: { autocomplete: "current-password" } %>
     </div>
 
-    <div class="form-actions">
-      <%= f.button :submit, "Update", class: "crypto-btn my-3" %>
+    <div class="form-actions my-3">
+      <%= f.button :submit, "Update", class: "crypto-btn" %>
+      <!-- <%= link_to "Back", :back , class: "crypto-btn my-3"%> -->
     </div>
   <% end %>
 
-  <h3>Cancel my account</h3>
+  <h5>Unhappy?</h5>
 
-  <p>Unhappy? <%= link_to "Cancel", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "fourth-crypto-btn" %></p>
+  <p><%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "fifth-crypto-btn " %></p>
   </div>
 
-  <%= link_to "Back", :back , class: "third-crypto-btn position-absolute back-edit"%>
 </div>

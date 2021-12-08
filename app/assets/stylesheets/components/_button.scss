@@ -19,7 +19,22 @@
   text-decoration: none;
 }
 
-.third-crypto-btn, .fourth-crypto-btn {
+.third-crypto-btn, .fourth-crypto-btn, .fifth-crypto-btn {
   font-size: 10px;
   margin-right: 5px;
+}
+
+.fifth-crypto-btn {
+  background: red;
+  border: solid 1px white;
+  padding: 10px 20px;
+  color: white;
+  transition: 0.5s ease;
+}
+
+.fifth-crypto-btn:hover {
+  background: white;
+  color: red;
+  transition: 0.5s ease;
+  border: solid 1px black;
 }

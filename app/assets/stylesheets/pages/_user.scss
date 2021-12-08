@@ -3,13 +3,20 @@
     justify-content: center;
 }
 
-.user-inner {
+.user-inner, .form-edit-inner {
   text-align: center;
   background: lightblue;
   border: solid 1px black;
   border-radius: 10px;
   width: 50%;
   padding: 20px;
+  position: relative;
+}
+
+.user-inner .edit-user, .edit-title {
+  position: absolute;
+  top: -10px;
+  left: -10px;
 }
 
 .user-inner img, h1 {
@@ -40,10 +47,19 @@
 }
 
 
+.form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 20%;
+  margin: auto;
+}
+
+
 @media (max-width: 600px) {
 
-  .user-inner {
-    width: 95%;
+  .user-inner, .form-edit-inner {
+    width: 85%;
     margin: 10px auto;
   }
 
