@@ -12,7 +12,7 @@
     </div>
       <div class="form-row">
       <%= f.input :date_wallet, as: :date, date_separator: '<span>:</span>' %>
-      <%= f.submit class:"btn second-crypto-btn" %>
+      <%= f.submit "Include!", class:"btn second-crypto-btn" %>
       </div>
     </div>
   <% end %>
@@ -42,7 +42,7 @@
     <th class="title-content-wallet" id="code"> Sym. </th>
     <th class="title-content-wallet" id="amount"> Amt. </th>
     <th class="title-content-wallet" id="buying-price"> Buy. Price </th>
-    <th class="title-content-wallet" id="date"> Date </th>
+    <th class="title-content-wallet" id="date_tab"> Date </th>
     <th class="title-content-wallet" id="cost"> Cost </th>
     <th class="title-content-wallet" id="actual-price"> Price </th>
     <th class="title-content-wallet" id="dif-percent"> Dif </th>
@@ -56,7 +56,7 @@
     <td class="content-wallet symbol"> <%= coin.crypto.symbol %> </td>
     <td class="content-wallet amount"> <%= coin.amount %> </td>
     <td class="content-wallet buying_price"> <%= coin.buying_price %> </td>
-    <td class="content-wallet date"> <%= coin.date_wallet %> </td>
+    <td class="content-wallet date_tab"> <%= coin.date_wallet %> </td>
     <td class="content-wallet cost">  <span class="cost"></span></td>
     <td class="content-wallet price"> <%= coin.crypto.price.round(2) %> </td>
     <td class="content-wallet dif">  <span class="dif"></span></td>

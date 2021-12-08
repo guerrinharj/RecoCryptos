@@ -1,13 +1,7 @@
 .form-wrapper, .form-edit-wrapper {
-  display: flex;
-  justify-content: center;
-  height: 100vh;
-  width: 100vw;
+  margin: auto;
+  width: auto;
   align-items: center;
-}
-
-#login-wrapper {
-  height: 60vh
 }
 
 .form-edit-wrapper {
@@ -15,17 +9,20 @@
 }
 
 .form-inner {
-  width: 80%;
+  width: auto;
   display: flex;
   justify-content: center;
+  align-items: center
 }
 
 .form-edit-inner {
   margin: 20px 0;
 }
 
-.form-login {
-  width: 50%;
+.form-login, .password-inner {
+  width: auto;
+  border: solid 1px black;
+  margin-top: 2vw;
   background: white;
   padding: 40px 60px;
   border-radius: 3px;
@@ -37,7 +34,7 @@
     text-align: center;
   }
   .btn {
-    width: 100%;
+    width: 80px;
     margin-bottom: 2rem;
   }
   a {
@@ -62,6 +59,14 @@
   left: 5px;
 }
 
+.password-inner {
+  margin: 10vw auto;
+}
+
+.password-inner a {
+  color: black
+}
+
 @media (max-width: 600px) {
 
   .form-inner {
@@ -75,6 +80,10 @@
 
   .form-links  {
     text-align: center;
+  }
+
+  .password-inner {
+    width:80%;
   }
 
 }
