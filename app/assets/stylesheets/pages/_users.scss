@@ -7,6 +7,7 @@
   margin: 20px auto;
   font-weight: 800;
   width: auto;
+  border-radius: 10px;
   position: absolute;
   font-size: 1rem;
   top: -40px;
@@ -19,7 +20,7 @@
   align-items: center;
   background: lightblue;
   padding: 20px;
-  width: auto;
+  max-width: 80%;
   border: solid 1px black;
   border-radius: 10px;
   margin: auto;
