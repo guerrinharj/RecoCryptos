@@ -1,31 +1,94 @@
-// #new_wallet_inclusion {
-//   display:flex;
-//   width: 50%;
-//   background: white;
-//   padding: 40px 60px;
-//   border-radius: 3px;
-//   box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
-// }
+.wallet-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 75%;
+    margin: auto;
+    margin-top: 20px;
+}
+.table-wallet {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: lightblue;
+    padding: 20px;
+    width: 75%;
+    border: solid 1px black;
+    border-radius: 10px;
+    margin: auto;
+    margin-top: 20px;
+}
+.form-group.select.required{
+    margin-right: 10px;
+}
+.form-group.integer.optional{
+    margin-right: 10px;
+}
+.form-control.select.required{
+    margin-left: 10px;
+}
+.form-control.numeric.integer.optional{
+    margin-left: 10px;
+}
 
-// .wallet-title {
-//     display: flex;
-//     flex: 0 0 auto;
-//     flex-flow: row wrap;
-//     align-items: center;
-//     // margin-bottom: 20px;
-//     // margin-left: 20px;
-//     // margin-right: 20px;
-//     // margin-top: 20px;
-//     width: 50%;
-// }
+.title-content-wallet{
+    padding-left: 20px;
+}
+.content-wallet{
+    padding-left: 10px;
+    padding-right: 10px;
+    justify-content: center;
+    align-items: center;
+    background: lightblue;
+    width: 75%;
+    border: solid 1px black;
+    border-radius: 5px;
+    margin: auto;
+    margin-top: 20px;
+    transition: 0.2s ease;
+}
+.btn-delete-wallet{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    padding: 5px;
+    width: 100%;
+    border: solid 1px black;
+    border-radius: 5px;
+    margin: auto;
+    margin-top: 8px;
+    margin-left: 10px;
+    transition: 0.2s ease;
+}
+.btn-delete-wallet:hover {
+  background-color: black;
+  transition: 0.2s ease;
+  color: lightblue;
+}
 
-// .form-group {
-//     display: flex;
-//     flex: 0 0 auto;
-//     flex-flow: row wrap;
-//     align-items: center;
-//     margin-bottom: 20px;
-//     margin-left: 20px;
-//     margin-right: 20px;
-//     margin-top: 20px;
-// }
+@media (max-width: 800px) {
+
+  .table-wallet table th, .table-wallet table td {
+    padding: 0px 30px 30px 0px!important;
+  }
+
+  #number, #code, #buying-price, #date, #cost, #dif-percent, #percent-portfolio{
+    display: none;
+  }
+
+  .number, .symbol, .buying_price, .date, .cost, .dif, .portfolio {
+    display: none;
+  }
+
+  .crypto, .buying_price, .profit-loss {
+    font-size: 12px
+  }
+  .amount {
+    font-size: 12px
+  }
+  .table-wallet {
+    display: block;
+    margin: auto;
+  }
+}

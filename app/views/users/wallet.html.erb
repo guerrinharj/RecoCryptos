@@ -1,61 +1,61 @@
-<div>
-  <h1 class="wallet-title">Wallet</h1>
-  <div>
-    <%= simple_form_for [@user, @wallet_inclusion], html: {class: "form-inline"} do |f| %>
-      <div class="form-group mb-2">
-        <%= f.association :crypto %>
-        <%= f.input :amount %>
-        <%= f.input :buying_price %>
-        <%= f.submit class:"btn crypto-btn" %>
-      </div>
-    <% end %>
-  </div>
+<div class="wallet-title">
+  <h1>Wallet</h1>
 </div>
-<div class= "text-justify" >
-<table>
+<div class="wallet-title">
+  <%= simple_form_for [@user, @wallet_inclusion], html: {class: "form-inline"} do |f| %>
+    <div class="form-group mb-2">
+      <%= f.association :crypto %>
+      <%= f.input :amount %>
+      <%= f.input :buying_price %>
+      <%#= f.input :date %>
+      <%= f.submit class:"btn crypto-btn" %>
+    </div>
+  <% end %>
+</div>
+<div class="text-justify" >
+<table class="table-wallet">
   <tr>
-    <th> Total Invested </th>
-    <th> Profit/Loss </th>
-    <th> % </th>
+    <th class="title-content-wallet" id="total-invested"> Total Invested </th>
+    <th class="title-content-wallet" id="total-profit-loss"> Profit/Loss </th>
+    <th class="title-content-wallet" id="total-percent"> % </th>
   </tr>
     <td> <span id="totalinvested"></span></td>
     <td> <span id="totalprofit"></span></td>
     <td> <span id="totalpercent"></span></td>
-    <td> <span id="totalbrut"></span></td>
+    <td> <span id="totalbrut" style="display: none;"></span></td>
   <tr>
 </table>
 </div>
-
 <div>
-<table>
+<table class="table-wallet">
   <tr>
-    <th> # </th>
-    <th> Crypto </th>
-    <th> Code </th>
-    <th> Amount </th>
-    <th> Buying Price </th>
-    <th> Date </th>
-    <th> Cost </th>
-    <th> Actual Price </th>
-    <th> Dif% </th>
-    <th> Profit/Loss </th>
-    <th> % of Portfolio </th>
+    <th class="title-content-wallet" id="number"> # </th>
+    <th class="title-content-wallet" id="crypto"> Crypto </th>
+    <th class="title-content-wallet" id="code"> Code </th>
+    <th class="title-content-wallet" id="amount"> Amount </th>
+    <th class="title-content-wallet" id="buying-price"> Buying Price </th>
+    <th class="title-content-wallet" id="date"> Date </th>
+    <th class="title-content-wallet" id="cost"> Cost </th>
+    <th class="title-content-wallet" id="actual-price"> Price </th>
+    <th class="title-content-wallet" id="dif-percent"> Dif% </th>
+    <th class="title-content-wallet" id="profit-loss"> Profit/Loss </th>
+    <th class="title-content-wallet" id="percent-portfolio"> %Portfolio </th>
   </tr>
   <% @wallet_inclusions.each_with_index do |coin, index| %>
   <tr class="coinrow">
-    <td> <%= index+1 %></td>
-    <td> <%= coin.crypto.name %> </td>
-    <td> <%= coin.crypto.symbol %> </td>
-    <td class="amount"> <%= coin.amount %> </td>
-    <td class="buying_price"> <%= coin.buying_price %> </td>
-    <td>  date #todo</td>
-    <td>  <span class="cost"></span></td>
-    <td class="price"> <%= coin.crypto.price.round(2) %> </td>
-    <td>  <span class="dif"></span></td>
-    <td> <span class="profit"></span> </td>
-    <td>  <span class="portfolio"></span></td>
-    <td> <%= link_to "delete", wallet_inclusion_path(coin), method:"DELETE" %> </td>
-    <td>  <span class="actual-brut"></span></td>
+    <td class="content-wallet number"> <%= index+1 %></td>
+    <td class="content-wallet name"> <%= coin.crypto.name %> </td>
+    <td class="content-wallet symbol"> <%= coin.crypto.symbol %> </td>
+    <td class="content-wallet amount"> <%= coin.amount %> </td>
+    <td class="content-wallet buying_price"> <%= coin.buying_price %> </td>
+    <td class="content-wallet date">  date #todo</td>
+    <td class="content-wallet cost">  <span class="cost"></span></td>
+    <td class="content-wallet price"> <%= coin.crypto.price.round(2) %> </td>
+    <td class="content-wallet dif">  <span class="dif"></span></td>
+    <td class="content-wallet profit"> <span class="profit"></span> </td>
+    <td class="content-wallet portfolio">  <span class="portfolio"></span></td>
+    <td class="btn-delete-wallet delete"> <%= link_to "delete", wallet_inclusion_path(coin), method:"DELETE" %> </td>
+    <td class="">  <span class="actual-brut" style="display: none;"></span></td>
   </tr>
   <% end %>
 </table>
