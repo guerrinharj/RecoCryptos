@@ -15,7 +15,7 @@ const initWalletTable = () => {
       const actualBrut = row.querySelector(".actual-brut") //atualizar
 
       //updating costs
-      cost.innerText = parseInt(buying_price.innerText, 10) * parseInt(amount.innerText, 10)
+      cost.innerText =  parseInt(buying_price.innerText, 10) * parseInt(amount.innerText, 10)
       //updating dif
       let difference = (parseInt(price.innerText, 10) / parseInt(buying_price.innerText, 10) - 1) * 100
       dif.innerText = Math.round(difference * 100) / 100
@@ -36,7 +36,7 @@ const initWalletTable = () => {
       costs = costs.map((element) => {
        return parseInt(element.innerText, 10)
       })
-      totalInvested.innerText = costs.reduce((previousValue, currentValue) => previousValue + currentValue)
+      totalInvested.innerText =   costs.reduce((previousValue, currentValue) => previousValue + currentValue)
 
       //updating totalprofit
       let profits = new Array
