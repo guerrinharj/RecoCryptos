@@ -1,13 +1,51 @@
-.wallet-inner {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    width: 75%;
-    /*margin: auto;*/
-    margin-top: 20px;
+.wallet-title {
+  font-family: $headers-font;
+  margin: 20px auto;
+  font-weight: 800;
+  width: auto;
+  position: absolute;
+  font-size: 1rem;
+  top: -40px;
+  left: -40px;
 }
-.table-wallet {
+
+.wallet-inner {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  border: solid 1px black;
+  border-radius: 10px;
+  padding: 10px 30px;
+  width: 75%;
+  margin: auto;
+  margin-top: 20px;
+  background: lightblue;
+  text-align: center;
+}
+
+.form-inline .form-group {
+  text-align: center;
+  flex-wrap: wrap
+}
+
+.form-row {
+  width: 100%;
+  margin: 20px 0
+}
+
+.form-group label {
+  margin: 0 10px
+}
+
+.form-control {
+    margin-left: 10px;
+    background-color: lightblue;
+    border: solid 1px black;
+}
+
+.table-wallet, .table-wallet-overall {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -19,6 +57,17 @@
     margin: auto;
     margin-top: 20px;
 }
+
+.table-wallet-overall th, td {
+  width: 10vw;
+  text-align: center;
+}
+
+.table-wallet th {
+  font-size: 10px;
+    text-align: center;
+}
+
 .form-group.select.required{
     margin-right: 10px;
 }
@@ -32,16 +81,12 @@
     margin-left: 10px;
 }
 
-.title-content-wallet{
-    padding-left: 20px;
-}
 .content-wallet{
     padding-left: 10px;
     padding-right: 10px;
     justify-content: center;
     align-items: center;
     background: lightblue;
-    width: 75%;
     border: solid 1px black;
     border-radius: 5px;
     margin: auto;
@@ -90,6 +135,19 @@
   }
   .table-wallet {
     display: block;
-    margin: auto;
   }
+
+  .one, .two, .three {
+    margin: 30px auto
+  }
+
+  .wallet-title {
+    left: auto;
+  }
+
+  .form-row {
+    justify-content: center;
+  }
+
+
 }

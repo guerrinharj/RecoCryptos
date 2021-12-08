@@ -1,45 +1,49 @@
-<div class="wallet-title">
-  <h1>Wallet</h1>
-</div>
-<div class="wallet-inner">
+
+<div class="wallet-inner one">
+  <div class="wallet-title crypto-btn">
+   WALLET!
+  </div>
   <%= simple_form_for [@user, @wallet_inclusion], html: {class: "form-inline"} do |f| %>
     <div class="form-group mb-2">
+    <div class="form-row">
       <%= f.association :crypto %>
       <%= f.input :amount %>
       <%= f.input :buying_price %>
+    </div>
+      <div class="form-row">
       <%= f.input :date_wallet, as: :date, date_separator: '<span>:</span>' %>
-      <%= f.submit class:"btn crypto-btn" %>
+      <%= f.submit class:"btn second-crypto-btn" %>
+      </div>
     </div>
   <% end %>
 </div>
-<div class="text-justify" >
-<table class="table-wallet">
-  <tr>
-    <th class="title-content-wallet" id="total-invested"> Total Invested </th>
-    <th class="title-content-wallet" id="total-profit-loss"> Profit/Loss </th>
-    <th class="title-content-wallet" id="total-percent"> % </th>
-  </tr>
-    <td> <span id="totalinvested"></span></td>
-    <td> <span id="totalprofit"></span></td>
-    <td> <span id="totalpercent"></span></td>
-    <td> <span id="totalbrut" style="display: none;"></span></td>
-  <tr>
-</table>
+<div class="text-justify two" >
+  <table class="table-wallet-overall">
+    <tr>
+      <th class="title-content-wallet" id="total-invested"> Total Invested </th>
+      <th class="title-content-wallet" id="total-profit-loss"> Profit/Loss </th>
+      <th class="title-content-wallet" id="total-percent"> % </th>
+    </tr>
+      <td> <span id="totalinvested"></span></td>
+      <td> <span id="totalprofit"></span></td>
+      <td> <span id="totalpercent"></span> <span id="totalbrut" style="display: none;"></td>
+    <tr>
+  </table>
 </div>
-<div>
-<table class="table-wallet">
+<div class="three">
+  <table class="table-wallet">
   <tr>
     <th class="title-content-wallet" id="number"> # </th>
     <th class="title-content-wallet" id="crypto"> Crypto </th>
-    <th class="title-content-wallet" id="code"> Code </th>
-    <th class="title-content-wallet" id="amount"> Amount </th>
-    <th class="title-content-wallet" id="buying-price"> Buying Price </th>
+    <th class="title-content-wallet" id="code"> Sym. </th>
+    <th class="title-content-wallet" id="amount"> Amt. </th>
+    <th class="title-content-wallet" id="buying-price"> Buy. Price </th>
     <th class="title-content-wallet" id="date"> Date </th>
     <th class="title-content-wallet" id="cost"> Cost </th>
     <th class="title-content-wallet" id="actual-price"> Price </th>
-    <th class="title-content-wallet" id="dif-percent"> Dif% </th>
+    <th class="title-content-wallet" id="dif-percent"> Dif </th>
     <th class="title-content-wallet" id="profit-loss"> Profit/Loss </th>
-    <th class="title-content-wallet" id="percent-portfolio"> %Portfolio </th>
+    <th class="title-content-wallet" id="percent-portfolio"> Portf. </th>
   </tr>
   <% @wallet_inclusions.each_with_index do |coin, index| %>
   <tr class="coinrow">
