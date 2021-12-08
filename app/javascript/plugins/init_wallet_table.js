@@ -28,7 +28,7 @@ const initWalletTable = () => {
     })
 
       //updating totalinvested
-      let costs = new Array
+      let costs = []
       const costsArray = document.querySelectorAll(".cost")
       costsArray.forEach((cost) => {
         costs.push(cost)
@@ -48,7 +48,6 @@ const initWalletTable = () => {
         return parseInt(element.innerText, 10)
       })
       totalProfit.innerText = profits.reduce((previousValue, currentValue) => previousValue + currentValue)
-      console.log(totalProfit)
       //updating totaldif
       let totalDifference = parseInt(totalProfit.innerText, 10) / parseInt(totalInvested.innerText, 10) * 100
       totalPercent.innerText = Math.round(totalDifference * 100) / 100
@@ -63,7 +62,6 @@ const initWalletTable = () => {
         return parseInt(element.innerText, 10)
       })
       totalBrut.innerText = bruts.reduce((previousValue, currentValue) => previousValue + currentValue)
-      console.log(totalBrut)
 
       //updating totalbrut%
 
@@ -71,8 +69,10 @@ const initWalletTable = () => {
       const actualBrut = row.querySelector(".actual-brut") //atualizar
       const portfolio = row.querySelector(".portfolio") //atualizar
 
-      portfolio.innerText = Math.round(parseInt(actualBrut.innerText, 10) / parseInt(totalBrut.innerText, 10) * 100) + "%"
-
+      let actualBrutValue = parseInt(actualBrut.innerText, 10)
+      let totalBrutValue = parseInt(totalBrut.innerText, 10)
+      let portfolioCount = Math.round(actualBrutValue / totalBrutValue * 100)
+      portfolio.innerHTML = portfolioCount + "%"
     })
 }
 export { initWalletTable }

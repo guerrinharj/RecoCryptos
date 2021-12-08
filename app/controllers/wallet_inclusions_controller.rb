@@ -6,6 +6,9 @@ class WalletInclusionsController < ApplicationController
     @wallet_inclusion.user = @user
     if @wallet_inclusion.save
       redirect_to wallet_user_path(@user)
+    else
+      flash.alert = "Fields can't be blank"
+      redirect_to wallet_user_path(@user)
     end
   end
 
@@ -21,6 +24,6 @@ class WalletInclusionsController < ApplicationController
   private
 
   def wallet_inclusions_params
-    params.require(:wallet_inclusion).permit(:amount, :crypto_id, :buying_price)
+    params.require(:wallet_inclusion).permit(:amount, :crypto_id, :buying_price, :date_wallet)
   end
 end

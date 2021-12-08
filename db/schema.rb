@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_06_191951) do
+ActiveRecord::Schema.define(version: 2021_12_08_160922) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -113,6 +113,7 @@ ActiveRecord::Schema.define(version: 2021_12_06_191951) do
     t.integer "amount"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.date "date_wallet"
     t.index ["crypto_id"], name: "index_wallet_inclusions_on_crypto_id"
     t.index ["user_id"], name: "index_wallet_inclusions_on_user_id"
   end
