@@ -5,9 +5,13 @@
 
 .ranking-title {
   font-family: $headers-font;
-  margin: 20px 0;
+  margin: 20px auto;
   font-weight: 800;
-  font-size: 2rem;
+  width: auto;
+  position: absolute;
+  font-size: 1rem;
+  top: -40px;
+  left: -40px;
 }
 
 .users-inner {
@@ -20,6 +24,7 @@
   border: solid 1px black;
   border-radius: 10px;
   margin: auto;
+  position: relative;
 }
 
 .users-inner th, .users-inner td {
@@ -44,6 +49,11 @@
 
   .users-inner {
     width: 88%;
+    margin: 30px auto;
+  }
+
+  .ranking-title {
+    left: auto;
   }
 
   .users-inner th, .users-inner td {
