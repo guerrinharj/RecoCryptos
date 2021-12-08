@@ -135,6 +135,19 @@
   }
   .table-wallet {
     display: block;
-    margin: auto;
   }
+
+  .one, .two, .three {
+    margin: 30px auto
+  }
+
+  .wallet-title {
+    left: auto;
+  }
+
+  .form-row {
+    justify-content: center;
+  }
+
+
 }
