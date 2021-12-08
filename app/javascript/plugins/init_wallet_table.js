@@ -71,13 +71,8 @@ const initWalletTable = () => {
 
       let actualBrutValue = parseInt(actualBrut.innerText, 10)
       let totalBrutValue = parseInt(totalBrut.innerText, 10)
-      let portfolioCount = (actualBrutValue / totalBrutValue * 100)
-      console.log(portfolioCount)
-      if (isNaN(parseFloat(portfolioCount))) {
-        portfolio.innerHTML = 100 + "%"
-      } else {
-        portfolio.innerHTML = portfolioCount + "%"
-      }
+      let portfolioCount = Math.round(actualBrutValue / totalBrutValue * 100)
+      portfolio.innerHTML = portfolioCount + "%"
     })
 }
 export { initWalletTable }
