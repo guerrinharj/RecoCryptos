@@ -17,6 +17,10 @@
     </div>
   <% end %>
 </div>
+
+<% if current_user.wallet_inclusions.empty? %>
+
+<% else %>
 <div class="text-justify two" >
   <table class="table-wallet-overall">
     <tr>
@@ -62,5 +66,6 @@
     <td class="">  <span class="actual-brut" style="display: none;"></span></td>
   </tr>
   <% end %>
-</table>
+  </table>
 </div>
+<% end %>
