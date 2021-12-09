@@ -1,0 +1,5 @@
+meta_product_name: "RecoCryptos"
+meta_title: "RecoCryptos - The cryptoworld shouldn't be a gatekeeper's game"
+meta_description: "App for begginers and enthusiasts of the cryptoworld!"
+meta_image: "logo_RC_CUBES.png" # should exist in `app/assets/images/`
+twitter_account: "recocryptos_app"   # required for Twitter Cards
