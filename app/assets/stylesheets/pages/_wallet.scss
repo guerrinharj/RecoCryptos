@@ -114,7 +114,16 @@
   color: lightblue;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1000px) {
+
+  .form-row {
+    display: block;
+    width: 30%
+  }
+
+}
+
+@media (max-width: 600px) {
 
   .table-wallet table th, .table-wallet table td {
     padding: 0px 30px 30px 0px!important;
@@ -150,7 +159,10 @@
   }
 
   .form-row {
+    display: flex;
+    width: 80%;
     justify-content: center;
+        margin: 20px auto;
   }
 
 
