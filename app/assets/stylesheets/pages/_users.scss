@@ -45,6 +45,14 @@
   transform: translateY(-10px)
 }
 
+@media (max-width: 1000px) {
+
+  .users-inner {
+    max-width: 100%;
+  }
+
+}
+
 @media (max-width: 600px) {
 
   .users-inner {

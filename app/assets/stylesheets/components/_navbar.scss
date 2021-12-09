@@ -99,6 +99,14 @@ display: inline-block;
   }
 }
 
+@media (max-width: 1000px) {
+
+  .nav-item {
+    padding-left: 0;
+  }
+
+}
+
 @media (max-width: 600px) {
 
   .navbar-lewagon {
