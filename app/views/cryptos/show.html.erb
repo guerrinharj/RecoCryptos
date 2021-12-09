@@ -37,7 +37,7 @@
           <li> <h5>Percent Change 7d:</h5>  <span style="<%=@crypto.percent_change_7d.negative? ? 'color: red' : 'color: green'%>"><%= @crypto.percent_change_7d.round(2) %>%</span> </li>
           <li> <h5>Percent Change 30d:</h5>  <span style="<%=@crypto.percent_change_30d.negative? ? 'color: red' : 'color: green'%>"><%= @crypto.percent_change_30d.round(2) %>%</span> </li>
           <li> <h5>Market Cap:</h5>  $ <%= number_with_delimiter(@crypto.market_cap) %> </li>
-          <li> <h5>Market Cap Dominance:</h5>  $ <%= number_with_delimiter(@crypto.market_cap_dominance) %> </li>
+          <li> <h5>Market Cap Dominance:</h5>  <%= number_with_delimiter(@crypto.market_cap_dominance) %>% </li>
         </div>
       </ul>
     </div>
